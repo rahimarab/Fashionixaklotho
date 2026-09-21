@@ -1,1574 +1,669 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="Fashionixa Klotho - Custom apparel printing for individuals, businesses, schools, events and organizations across the USA.">
-
-  <title>Fashionixa Klotho | Custom Apparel Printing</title>
-
-  <style>
-    :root {
-      --green: #16a34a;
-      --dark-green: #0f7a35;
-      --black: #0b0b0b;
-      --dark: #171717;
-      --light: #f4f7f5;
-      --white: #ffffff;
-      --text: #222222;
-      --gray: #666666;
-      --border: #e1e7e3;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      line-height: 1.6;
-      background: white;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 92%;
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    /* TOP BAR */
-    .topbar {
-      background: var(--black);
-      color: white;
-      text-align: center;
-      padding: 9px 15px;
-      font-size: 14px;
-    }
-
-    /* NAVIGATION */
-    .navbar {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 20px;
-      font-weight: 800;
-    }
-
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      background: var(--green);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 9px;
-      font-weight: 900;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 27px;
-    }
-
-    .nav-links a {
-      font-size: 15px;
-      font-weight: 700;
-    }
-
-    .nav-links a:hover {
-      color: var(--green);
-    }
-
-    .menu-btn {
-      display: none;
-      border: none;
-      background: transparent;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(
-        135deg,
-        #f1faf4,
-        #ffffff 60%,
-        #e8f7ed
-      );
-      padding: 90px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      background: #dcfce7;
-      color: var(--dark-green);
-      padding: 7px 13px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(40px, 5vw, 65px);
-      line-height: 1.05;
-      color: var(--black);
-      margin-bottom: 22px;
-    }
-
-    h1 span {
-      color: var(--green);
-    }
-
-    .hero p {
-      font-size: 19px;
-      color: var(--gray);
-      max-width: 680px;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 13px 21px;
-      border-radius: 8px;
-      font-weight: 800;
-      border: 2px solid transparent;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--green);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: var(--dark-green);
-    }
-
-    .btn-dark {
-      background: var(--black);
-      color: white;
-    }
-
-    .btn-outline {
-      border-color: #bbb;
-      background: white;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--green);
-      color: var(--green);
-    }
-
-    .hero-card {
-      background: white;
-      padding: 30px;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      box-shadow: 0 15px 40px rgba(0,0,0,.08);
-    }
-
-    .hero-card h3 {
-      font-size: 24px;
-      margin-bottom: 16px;
-    }
-
-    .check {
-      display: flex;
-      gap: 10px;
-      margin: 12px 0;
-    }
-
-    .check b {
-      color: var(--green);
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 78px 0;
-    }
-
-    .light {
-      background: var(--light);
-    }
-
-    .section-head {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 42px;
-    }
-
-    .section-head h2 {
-      font-size: 36px;
-      line-height: 1.2;
-      margin-bottom: 12px;
-      color: var(--black);
-    }
-
-    .section-head p {
-      color: var(--gray);
-    }
-
-    /* SERVICES */
-    .grid {
-      display: grid;
-      gap: 20px;
-    }
-
-    .services {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,0,0,.07);
-      transition: .2s;
-    }
-
-    .icon {
-      width: 45px;
-      height: 45px;
-      border-radius: 10px;
-      background: #dcfce7;
-      color: var(--dark-green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      margin-bottom: 15px;
-    }
-
-    .card h3 {
-      margin-bottom: 8px;
-      font-size: 19px;
-    }
-
-    .card p {
-      color: var(--gray);
-      font-size: 15px;
-    }
-
-    /* PRINTING METHODS */
-    .methods {
-      grid-template-columns: repeat(5, 1fr);
-    }
-
-    .method {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px 14px;
-      text-align: center;
-      font-weight: 800;
-    }
-
-    .method small {
-      display: block;
-      margin-top: 5px;
-      color: #777;
-      font-weight: normal;
-    }
-
-    /* CUSTOMERS */
-    .audience {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .audience .card {
-      border-top: 4px solid var(--green);
-    }
-
-    /* STEPS */
-    .steps {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .step {
-      text-align: center;
-    }
-
-    .number {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--black);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 15px;
-      font-weight: 900;
-    }
-
-    /* ABOUT */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .about-text h2 {
-      font-size: 38px;
-      line-height: 1.15;
-      margin-bottom: 17px;
-    }
-
-    .about-text p {
-      color: var(--gray);
-      margin-bottom: 16px;
-    }
-
-    .highlight {
-      margin: 11px 0;
-      display: flex;
-      gap: 10px;
-    }
-
-    .highlight span {
-      color: var(--green);
-      font-weight: 900;
-    }
-
-    .about-box {
-      background: var(--black);
-      color: white;
-      border-radius: 18px;
-      padding: 40px;
-    }
-
-    .about-box h3 {
-      font-size: 28px;
-      margin-bottom: 14px;
-    }
-
-    /* QUOTE */
-    .quote-wrap {
-      display: grid;
-      grid-template-columns: .75fr 1.25fr;
-      gap: 35px;
-      align-items: start;
-    }
-
-    .quote-info {
-      background: var(--black);
-      color: white;
-      border-radius: 18px;
-      padding: 35px;
-    }
-
-    .quote-info h2 {
-      font-size: 34px;
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-
-    .quote-info p {
-      color: #ddd;
-      margin-bottom: 20px;
-    }
-
-    .contact-line {
-      border-top: 1px solid #333;
-      padding: 13px 0;
-    }
-
-    .form {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 30px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 17px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 12px 13px;
-      border: 1px solid #ccd5cf;
-      border-radius: 8px;
-      font: inherit;
-      background: white;
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      outline: 2px solid #bbf7d0;
-      border-color: var(--green);
-    }
-
-    .form-note {
-      font-size: 13px;
-      color: #777;
-      margin-top: 12px;
-    }
-
-    /* CONTACT */
-    .contact {
-      text-align: center;
-      background: #eaf7ee;
-    }
-
-    .contact-buttons {
-      justify-content: center;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--black);
-      color: #ddd;
-      padding: 30px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      font-size: 14px;
-    }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
-    /* MOBILE */
-    @media(max-width: 900px) {
-
-      .hero-grid,
-      .about,
-      .quote-wrap {
-        grid-template-columns: 1fr;
-      }
-
-      .services {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .methods {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .audience {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .steps {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media(max-width: 700px) {
-
-      .menu-btn {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 72px;
-        left: 0;
-        right: 0;
-        background: white;
-        border-bottom: 1px solid var(--border);
-        padding: 15px 4%;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .hero {
-        padding: 60px 0;
-      }
-
-      section {
-        padding: 58px 0;
-      }
-
-      .services,
-      .methods,
-      .audience,
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .field.full {
-        grid-column: auto;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fashionixa Klotho custom apparel printing in Dallas and Fort Worth. Custom T-shirts, hoodies, kids apparel, DTF, DTG, screen printing and vinyl.">
+<title>Fashionixa Klotho | Custom Apparel Printing</title>
+
+<style>
+:root{
+  --forest:#073f32;
+  --forest2:#0d7055;
+  --green:#19a875;
+  --mint:#e2f7ed;
+  --cream:#fff7e9;
+  --orange:#f47b20;
+  --yellow:#ffc928;
+  --pink:#ff6f91;
+  --blue:#4db7e5;
+  --ink:#10221d;
+  --muted:#66736d;
+  --white:#fff;
+  --line:#e5e5df;
+  --shadow:0 24px 70px rgba(7,63,50,.14);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.55;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+.container{width:min(1180px,92%);margin:auto}
+
+/* NAV */
+.nav{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;font-weight:950;font-size:19px}
+.logo-box{
+  width:45px;height:45px;border-radius:13px;
+  background:var(--forest);color:#b9efcf;
+  display:grid;place-items:center;font-weight:1000;
+  transform:rotate(-4deg);
+}
+.links{display:flex;gap:25px;align-items:center;font-size:14px;font-weight:850}
+.links a:hover{color:var(--orange)}
+.cta{background:var(--forest);color:white!important;padding:12px 20px;border-radius:999px}
+.menu{display:none;background:none;border:0;font-size:28px}
+
+/* HERO */
+.hero{
+  background:
+    radial-gradient(circle at 8% 15%,rgba(244,123,32,.20),transparent 25%),
+    radial-gradient(circle at 90% 20%,rgba(25,168,117,.18),transparent 28%),
+    var(--cream);
+  padding:58px 0 72px;
+  overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:45px;align-items:center}
+.eyebrow{
+  display:inline-block;background:var(--orange);color:white;
+  padding:8px 13px;border-radius:999px;font-size:11px;font-weight:1000;
+  letter-spacing:1.5px;margin-bottom:18px;
+}
+h1{
+  font-size:clamp(48px,6.2vw,78px);
+  line-height:.94;letter-spacing:-3.5px;margin-bottom:23px;
+}
+h1 em{font-style:normal;color:var(--forest2)}
+.hero p{color:var(--muted);font-size:18px;max-width:560px;margin-bottom:28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 21px;border-radius:12px;font-weight:950;
+  border:2px solid transparent;transition:.2s;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.12)}
+.btn-green{background:var(--forest);color:white}
+.btn-orange{background:var(--orange);color:white}
+.btn-white{background:white;border-color:var(--forest);color:var(--forest)}
+
+.hero-photo{
+  position:relative;border-radius:32px;overflow:hidden;
+  min-height:500px;background:#dfe7e2;box-shadow:var(--shadow);
+}
+.hero-photo img{width:100%;height:500px;object-fit:cover;display:block}
+.hero-photo:after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(244,123,32,.12),transparent 45%,rgba(7,63,50,.15));
+  pointer-events:none;
+}
+.photo-overlay{
+  position:absolute;z-index:2;left:18px;right:18px;bottom:18px;
+  background:rgba(7,63,50,.94);color:white;
+  border-radius:18px;padding:17px 19px;
+  display:flex;justify-content:space-between;align-items:center;gap:15px;
+}
+.photo-overlay strong{font-size:18px}
+.photo-overlay span{font-size:12px;color:#c9dfd4}
+
+/* COLOR STRIP */
+.strip{background:var(--forest);color:white;padding:16px 0;overflow:hidden}
+.strip-row{display:flex;justify-content:space-around;gap:25px;font-size:12px;font-weight:950;letter-spacing:1.1px;white-space:nowrap}
+.strip b{color:#b9efcf}
+
+/* SECTIONS */
+section{padding:88px 0}
+.head{text-align:center;max-width:760px;margin:0 auto 42px}
+.kicker{
+  font-size:11px;font-weight:1000;letter-spacing:2px;
+  color:var(--orange);text-transform:uppercase;margin-bottom:8px;
+}
+.head h2{font-size:clamp(34px,4.5vw,53px);line-height:1.03;letter-spacing:-1.8px}
+.head p{color:var(--muted);margin-top:13px}
+
+/* APPAREL */
+.apparel{background:#fff}
+.apparel-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
+.apparel-card{
+  border:1px solid var(--line);border-radius:22px;overflow:hidden;
+  background:white;transition:.25s;box-shadow:0 8px 25px rgba(7,63,50,.04)
+}
+.apparel-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.apparel-img{height:250px;background:#f2f3ef;overflow:hidden}
+.apparel-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.4s}
+.apparel-card:hover .apparel-img img{transform:scale(1.05)}
+.apparel-body{padding:18px}
+.apparel-body h3{font-size:19px;margin-bottom:5px}
+.apparel-body p{font-size:13px;color:var(--muted)}
+
+/* FAMILY / KIDS */
+.family{
+  background:
+    radial-gradient(circle at 10% 20%,rgba(255,111,145,.15),transparent 22%),
+    radial-gradient(circle at 90% 75%,rgba(77,183,229,.15),transparent 24%),
+    #fff9f3;
+}
+.family-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+.family-photo{border-radius:30px;overflow:hidden;min-height:480px;box-shadow:var(--shadow)}
+.family-photo img{width:100%;height:100%;min-height:480px;object-fit:cover;display:block}
+.family-copy{
+  border-radius:30px;padding:45px;background:white;border:1px solid var(--line);
+  display:flex;flex-direction:column;justify-content:center
+}
+.family-copy .badge{
+  display:inline-block;width:max-content;padding:7px 12px;border-radius:999px;
+  background:#ffe0e8;color:#a62b4c;font-weight:950;font-size:11px;
+  letter-spacing:1px;margin-bottom:16px
+}
+.family-copy h2{font-size:48px;line-height:1;letter-spacing:-2px;margin-bottom:15px}
+.family-copy p{color:var(--muted);margin-bottom:20px}
+.family-points{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:10px 0 25px}
+.family-point{padding:12px;border-radius:13px;background:#f7fbf9;font-size:13px;font-weight:800}
+.family-point span{margin-right:6px}
+
+/* METHODS */
+.methods{background:var(--forest);color:white}
+.methods .head p{color:#b8cec4}
+.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.method{
+  padding:27px;border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;background:rgba(255,255,255,.045);
+  transition:.25s
+}
+.method:hover{transform:translateY(-6px);background:rgba(255,255,255,.08)}
+.method .num{color:#a9eec5;font-size:12px;font-weight:1000}
+.method h3{font-size:24px;margin:27px 0 8px}
+.method p{font-size:13px;color:#b8cec4}
+
+/* STORY */
+.story{background:var(--cream)}
+.story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.story-main{
+  min-height:430px;border-radius:28px;padding:36px;
+  background:linear-gradient(135deg,#43d393,#b7f3d5);
+  position:relative;overflow:hidden;color:var(--forest)
+}
+.story-main h2{font-size:48px;line-height:.98;max-width:430px;letter-spacing:-2px}
+.story-main p{max-width:420px;margin-top:15px}
+.tiny-label{
+  position:absolute;top:22px;right:22px;background:var(--forest);
+  color:white;padding:8px 12px;border-radius:999px;font-size:10px;font-weight:900
+}
+.story-img{
+  position:absolute;right:-25px;bottom:-30px;width:60%;height:68%;
+  object-fit:cover;border-radius:24px 0 0 0;box-shadow:-15px -15px 35px rgba(0,0,0,.1)
+}
+.story-side{display:grid;gap:20px}
+.story-card{border-radius:28px;padding:31px;background:white;border:1px solid var(--line)}
+.story-card.dark{background:var(--forest);color:white}
+.story-card h3{font-size:29px;line-height:1.05;margin-bottom:10px}
+.story-card p{font-size:14px;color:var(--muted)}
+.story-card.dark p{color:#b8cec4}
+.arrow{color:var(--orange);font-weight:1000;margin-top:20px;display:inline-block}
+
+/* WHO */
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.who-card{padding:25px;border-radius:20px;background:#f8faf8;border:1px solid var(--line);transition:.2s}
+.who-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(7,63,50,.08)}
+.who-card span{font-size:28px}
+.who-card h3{margin:14px 0 6px}
+.who-card p{font-size:13px;color:var(--muted)}
+
+/* WHY */
+.why{background:white}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.why-card{text-align:center;padding:28px 20px;border-radius:22px;border:1px solid var(--line)}
+.icon{
+  width:60px;height:60px;margin:0 auto 14px;border-radius:50%;
+  display:grid;place-items:center;font-size:25px;background:var(--mint)
+}
+.why-card:nth-child(2) .icon{background:#fff0e4}
+.why-card:nth-child(3) .icon{background:#fff5cc}
+.why-card:nth-child(4) .icon{background:#ffe5ed}
+.why-card h3{font-size:18px;margin-bottom:5px}
+.why-card p{font-size:13px;color:var(--muted)}
+
+/* PROCESS */
+.process{background:#fff}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+.step{text-align:center}
+.step-num{
+  width:58px;height:58px;margin:0 auto 17px;border-radius:50%;
+  background:var(--mint);color:var(--forest);display:grid;place-items:center;
+  font-weight:1000;font-size:19px;border:2px solid #b9e5ca
+}
+.step:nth-child(2) .step-num{background:#fff0e4;border-color:#ffd1b0}
+.step:nth-child(3) .step-num{background:#fff5cc;border-color:#f6dd83}
+.step:nth-child(4) .step-num{background:#ffe5ed;border-color:#ffb5c9}
+.step h3{margin-bottom:6px}.step p{font-size:13px;color:var(--muted)}
+
+/* CTA BANNER */
+.big-cta{
+  padding:0 0 88px;
+  background:#fff;
+}
+.big-cta-inner{
+  position:relative;overflow:hidden;border-radius:30px;
+  padding:42px 45px;background:linear-gradient(115deg,var(--forest),#08795a);
+  color:white;box-shadow:var(--shadow)
+}
+.big-cta-inner:before,.big-cta-inner:after{
+  content:"";position:absolute;border-radius:50%;pointer-events:none
+}
+.big-cta-inner:before{
+  width:270px;height:270px;background:rgba(244,123,32,.23);right:-70px;top:-100px
+}
+.big-cta-inner:after{
+  width:190px;height:190px;background:rgba(25,168,117,.35);right:170px;bottom:-110px
+}
+.big-cta-content{position:relative;z-index:2;max-width:680px}
+.big-cta h2{font-size:42px;line-height:1.02;letter-spacing:-1.5px;margin-bottom:9px}
+.big-cta p{color:#cbe2d8;margin-bottom:20px}
+
+/* QUOTE */
+.quote{background:var(--cream)}
+.quote-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}
+.quote-copy{padding:20px}
+.quote-copy h2{font-size:51px;line-height:.98;letter-spacing:-2px;margin-bottom:17px}
+.quote-copy p{color:var(--muted);margin-bottom:23px}
+.contact-line{border-top:1px solid #ddd7ca;padding:13px 0;font-size:14px}
+.contact-line b{color:var(--forest)}
+.form{background:white;border-radius:26px;padding:29px;box-shadow:var(--shadow)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:flex;flex-direction:column;gap:6px}
+.full{grid-column:1/-1}
+label{font-size:12px;font-weight:900}
+input,select,textarea{
+  font:inherit;padding:12px;border:1px solid #d8ded9;border-radius:10px;background:#fbfcfb
+}
+input:focus,select:focus,textarea:focus{outline:2px solid rgba(244,123,32,.25);border-color:var(--orange)}
+textarea{min-height:110px;resize:vertical}
+
+/* FOOTER */
+footer{background:#061d15;color:#9bb0a7;padding:35px 0}
+.footer{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.footer strong{color:white}
+.footer a{font-size:13px;margin-left:18px}
+.footer a:hover{color:white}
+
+/* MOBILE */
+@media(max-width:1050px){
+  .apparel-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:950px){
+  .hero-grid,.story-grid,.quote-grid,.family-grid{grid-template-columns:1fr}
+  .method-grid,.who-grid,.process-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-photo{max-width:750px;margin:auto}
+  .family-photo{min-height:420px}
+  .family-photo img{min-height:420px}
+}
+@media(max-width:700px){
+  .links{
+    display:none;position:absolute;top:78px;left:0;right:0;background:white;
+    padding:20px 4%;flex-direction:column;align-items:flex-start;
+    border-bottom:1px solid var(--line)
+  }
+  .links.open{display:flex}.menu{display:block}
+  .hero{padding:45px 0 55px}
+  h1{font-size:48px}
+  .hero p{font-size:16px}
+  .hero-photo,.hero-photo img{min-height:360px;height:360px}
+  .photo-overlay{flex-direction:column;align-items:flex-start}
+  .apparel-grid,.method-grid,.who-grid,.process-grid,.why-grid{grid-template-columns:1fr}
+  .family-copy{padding:30px}
+  .family-copy h2{font-size:39px}
+  .family-points{grid-template-columns:1fr}
+  .story-main{min-height:520px}
+  .story-img{width:75%;height:55%}
+  .big-cta-inner{padding:32px 25px}
+  .big-cta h2{font-size:34px}
+  .form-grid{grid-template-columns:1fr}
+  .full{grid-column:auto}
+  .footer{flex-direction:column;text-align:center}.footer a{margin:0 8px}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    Custom Apparel Printing • Small Orders & Bulk Orders • Serving Customers Across the USA
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#home"><span class="logo-box">FK</span> Fashionixa Klotho</a>
+    <button class="menu" aria-label="Open menu" onclick="document.getElementById('links').classList.toggle('open')">☰</button>
+    <nav class="links" id="links">
+      <a href="#apparel">Apparel</a>
+      <a href="#methods">Printing</a>
+      <a href="#family">Kids & Family</a>
+      <a href="#about">About</a>
+      <a href="#quote">Get a Quote</a>
+      <a class="cta" href="tel:+12149237638">214-923-7638</a>
+    </nav>
   </div>
+</header>
 
-  <!-- NAVIGATION -->
-  <header class="navbar">
-    <div class="container nav-inner">
-
-      <a href="#home" class="logo">
-        <span class="logo-mark">FK</span>
-        <span>Fashionixa Klotho</span>
-      </a>
-
-      <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-      <nav class="nav-links" id="navLinks">
-        <a href="#services" onclick="closeMenu()">Services</a>
-        <a href="#methods" onclick="closeMenu()">Printing</a>
-        <a href="#about" onclick="closeMenu()">About</a>
-        <a href="#quote" onclick="closeMenu()">Get a Quote</a>
-        <a href="#contact" onclick="closeMenu()">Contact</a>
-      </nav>
-
-    </div>
-  </header>
-
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-
-    <div class="container hero-grid">
-
-      <div>
-
-        <div class="eyebrow">
-          CUSTOM APPAREL PRINTING
-        </div>
-
-        <h1>
-          Custom Apparel Printing for
-          <span>Individuals & Businesses</span>
-        </h1>
-
-        <p>
-          Turn your ideas, logos, and designs into quality custom apparel.
-          We offer flexible options for individuals, businesses, schools,
-          events, organizations, and bulk orders.
-        </p>
-
-        <div class="buttons">
-
-          <a href="#quote" class="btn btn-primary">
-            Get a Free Quote
-          </a>
-
-          <a href="tel:+12149237638" class="btn btn-dark">
-            Call 214-923-7638
-          </a>
-
-        </div>
-
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">CUSTOM APPAREL • DALLAS / FORT WORTH</div>
+      <h1>YOUR IDEA.<br><em>YOUR SHIRT.</em><br>YOUR STYLE.</h1>
+      <p>Custom T-shirts, hoodies, kids apparel, polos and business apparel printed for brands, teams, events, schools and families.</p>
+      <div class="actions">
+        <a class="btn btn-green" href="#quote">START A QUOTE →</a>
+        <a class="btn btn-white" href="#apparel">SEE APPAREL</a>
       </div>
-
-
-      <div class="hero-card">
-
-        <h3>What We Print</h3>
-
-        <div class="check">
-          <b>✓</b>
-          <span>T-Shirts & Hoodies</span>
-        </div>
-
-        <div class="check">
-          <b>✓</b>
-          <span>Polos & Work Apparel</span>
-        </div>
-
-        <div class="check">
-          <b>✓</b>
-          <span>School & Graduation Shirts</span>
-        </div>
-
-        <div class="check">
-          <b>✓</b>
-          <span>Event & Party Shirts</span>
-        </div>
-
-        <div class="check">
-          <b>✓</b>
-          <span>Business & Company Apparel</span>
-        </div>
-
-        <div class="check">
-          <b>✓</b>
-          <span>Small & Bulk Orders</span>
-        </div>
-
-      </div>
-
     </div>
 
-  </section>
-
-
-  <!-- SERVICES -->
-  <section id="services">
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <h2>Our Custom Apparel Services</h2>
-
-        <p>
-          Choose the apparel and printing option that fits your project.
-        </p>
-
+    <div class="hero-photo">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1400&q=85" alt="Smiling woman wearing fashionable clothing">
+      <div class="photo-overlay">
+        <div><strong>TEES + HOODIES + KIDS</strong><br><span>Made for your style</span></div>
+        <span>DTF • DTG • SCREEN • VINYL</span>
       </div>
+    </div>
+  </div>
+</section>
 
+<div class="strip">
+  <div class="container strip-row">
+    <span><b>✓</b> CUSTOM ORDERS</span>
+    <span><b>✓</b> BULK PRINTING</span>
+    <span><b>✓</b> BUSINESS APPAREL</span>
+    <span><b>✓</b> FAMILY & KIDS</span>
+    <span><b>✓</b> EVENT SHIRTS</span>
+  </div>
+</div>
 
-      <div class="grid services">
-
-        <div class="card">
-          <div class="icon">01</div>
-          <h3>T-Shirts</h3>
-          <p>
-            Custom shirts for personal use, teams, businesses,
-            events, and promotions.
-          </p>
-        </div>
-
-
-        <div class="card">
-          <div class="icon">02</div>
-          <h3>Hoodies & Sweatshirts</h3>
-          <p>
-            Custom printed hoodies and sweatshirts for brands,
-            groups, and everyday wear.
-          </p>
-        </div>
-
-
-        <div class="card">
-          <div class="icon">03</div>
-          <h3>Polos</h3>
-          <p>
-            Professional custom polos for businesses,
-            teams, schools, and organizations.
-          </p>
-        </div>
-
-
-        <div class="card">
-          <div class="icon">04</div>
-          <h3>Work Uniforms</h3>
-          <p>
-            Custom business apparel that helps your team
-            look consistent and professional.
-          </p>
-        </div>
-
-
-        <div class="card">
-          <div class="icon">05</div>
-          <h3>School & Graduation</h3>
-          <p>
-            Class shirts, graduation apparel, school events,
-            clubs, and student groups.
-          </p>
-        </div>
-
-
-        <div class="card">
-          <div class="icon">06</div>
-          <h3>Events & Parties</h3>
-          <p>
-            Matching shirts for birthdays, reunions,
-            celebrations, and special events.
-          </p>
-        </div>
-
-
-        <div class="card">
-          <div class="icon">07</div>
-          <h3>Business Apparel</h3>
-          <p>
-            Logo shirts, branded apparel, promotional clothing,
-            and company orders.
-          </p>
-        </div>
-
-
-        <div class="card">
-          <div class="icon">08</div>
-          <h3>Bulk Orders</h3>
-          <p>
-            Flexible solutions for larger orders and
-            organizations with recurring apparel needs.
-          </p>
-        </div>
-
-      </div>
-
+<section id="apparel" class="apparel">
+  <div class="container">
+    <div class="head">
+      <div class="kicker">Pick Your Apparel</div>
+      <h2>MORE THAN JUST T-SHIRTS.</h2>
+      <p>Give customers more reasons to browse. Explore apparel for adults, kids, businesses, teams and special events.</p>
     </div>
 
-  </section>
+    <div class="apparel-grid">
+      <article class="apparel-card">
+        <div class="apparel-img">
+          <img src="https://beta.tshirtgang.com/images/hero-world.png" alt="Custom T-shirts">
+        </div>
+        <div class="apparel-body"><h3>T-Shirts</h3><p>Everyday custom shirts, brands, events and groups.</p></div>
+      </article>
 
+      <article class="apparel-card">
+        <div class="apparel-img">
+          <img src="https://stackapparelco.com/cdn/shop/collections/49B03112-A7CF-418E-9529-6DD7E040C1AC.jpg?v=1754000448&width=1500" alt="Custom hoodies and sweatshirts">
+        </div>
+        <div class="apparel-body"><h3>Hoodies</h3><p>Custom hoodies and sweatshirts with your artwork.</p></div>
+      </article>
 
-  <!-- PRINTING METHODS -->
-  <section id="methods" class="light">
+      <article class="apparel-card">
+        <div class="apparel-img">
+          <img src="https://tidalcolors.com/cdn/shop/files/big_tall.webp?v=1779709053&width=1287" alt="Mixed custom apparel">
+        </div>
+        <div class="apparel-body"><h3>Mixed Apparel</h3><p>Build a coordinated look across multiple garment styles.</p></div>
+      </article>
 
-    <div class="container">
+      <article class="apparel-card">
+        <div class="apparel-img">
+          <img src="https://txmaya.com/cdn/shop/articles/from-prototype-to-profit-launch-a-branded-custom-apparel-capsule.webp?v=1758619573" alt="Colorful branded apparel">
+        </div>
+        <div class="apparel-body"><h3>Brand Collections</h3><p>Create a full apparel collection around your brand.</p></div>
+      </article>
 
-      <div class="section-head">
+      <article class="apparel-card">
+        <div class="apparel-img">
+          <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=900&q=85" alt="Children wearing colorful clothing">
+        </div>
+        <div class="apparel-body"><h3>Kids Apparel</h3><p>Fun custom shirts for birthdays, schools and family events.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
 
-        <h2>Printing Methods</h2>
-
-        <p>
-          We match your order with the printing method
-          that fits your design, quantity, and apparel.
-        </p>
-
+<section class="family" id="family">
+  <div class="container">
+    <div class="family-grid">
+      <div class="family-photo">
+        <img src="https://images.unsplash.com/photo-1504159506876-f8338247a14a?auto=format&fit=crop&w=1200&q=85" alt="Children enjoying colorful fashion">
       </div>
 
+      <div class="family-copy">
+        <span class="badge">FAMILY • KIDS • EVENTS</span>
+        <h2>MAKE IT FUN.<br>MAKE IT YOURS.</h2>
+        <p>Custom apparel isn't only for businesses. Create matching shirts, birthday shirts, school apparel, family shirts and fun designs for kids.</p>
 
-      <div class="grid methods">
-
-        <div class="method">
-          DTF
-          <small>Flexible custom prints</small>
+        <div class="family-points">
+          <div class="family-point"><span>🎂</span> Birthday Shirts</div>
+          <div class="family-point"><span>🎓</span> School Events</div>
+          <div class="family-point"><span>👨‍👩‍👧</span> Family Matching</div>
+          <div class="family-point"><span>🎉</span> Parties & Events</div>
         </div>
 
-        <div class="method">
-          Screen Printing
-          <small>Great for bulk orders</small>
-        </div>
-
-        <div class="method">
-          DTG
-          <small>Detailed full-color designs</small>
-        </div>
-
-        <div class="method">
-          Vinyl
-          <small>Names, numbers & graphics</small>
-        </div>
-
-        <div class="method">
-          Custom Options
-          <small>Ask us for a quote</small>
-        </div>
-
+        <a class="btn btn-orange" href="#quote">CREATE YOUR DESIGN →</a>
       </div>
+    </div>
+  </div>
+</section>
 
+<section class="methods" id="methods">
+  <div class="container">
+    <div class="head">
+      <div class="kicker" style="color:#a9eec5">Printing Methods</div>
+      <h2>THE RIGHT PRINT FOR YOUR PROJECT.</h2>
+      <p>Four services, one place to get your apparel ready.</p>
     </div>
 
-  </section>
+    <div class="method-grid">
+      <div class="method"><div class="num">01 / DTF</div><h3>DTF Printing</h3><p>Great for colorful artwork, logos, names and detailed designs.</p></div>
+      <div class="method"><div class="num">02 / DTG</div><h3>DTG Printing</h3><p>Detailed direct-to-garment printing for selected apparel.</p></div>
+      <div class="method"><div class="num">03 / SCREEN</div><h3>Screen Printing</h3><p>A classic option for bold designs and larger production runs.</p></div>
+      <div class="method"><div class="num">04 / VINYL</div><h3>Vinyl Printing</h3><p>Useful for names, numbers, lettering and selected graphics.</p></div>
+    </div>
+  </div>
+</section>
 
-
-  <!-- CUSTOMERS -->
-  <section>
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <h2>Who We Serve</h2>
-
-        <p>
-          From one custom shirt to large company orders.
-        </p>
-
-      </div>
-
-
-      <div class="grid audience">
-
-        <div class="card">
-          <h3>Individuals</h3>
-          <p>
-            Personal shirts, gifts, family designs,
-            and custom apparel.
-          </p>
-        </div>
-
-
-        <div class="card">
-          <h3>Small Businesses</h3>
-          <p>
-            Branded shirts, uniforms, promotional apparel,
-            and staff clothing.
-          </p>
-        </div>
-
-
-        <div class="card">
-          <h3>Schools & Events</h3>
-          <p>
-            Graduation, school clubs, teams, parties,
-            reunions, and events.
-          </p>
-        </div>
-
-
-        <div class="card">
-          <h3>Companies & Organizations</h3>
-          <p>
-            Bulk apparel programs and larger recurring orders.
-          </p>
-        </div>
-
-      </div>
-
+<section class="story" id="about">
+  <div class="container">
+    <div class="head">
+      <div class="kicker">Built For Real Projects</div>
+      <h2>FROM ONE SHIRT TO A WHOLE TEAM.</h2>
+      <p>Whether you need one custom shirt or apparel for a whole group, start with your idea.</p>
     </div>
 
-  </section>
-
-
-  <!-- HOW IT WORKS -->
-  <section class="light">
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <h2>How It Works</h2>
-
-        <p>
-          A simple process from your idea to finished apparel.
-        </p>
-
+    <div class="story-grid">
+      <div class="story-main">
+        <div class="tiny-label">FASHIONIXA KLOTHO</div>
+        <h2>MAKE YOUR BRAND<br>LOOK LIKE A BRAND.</h2>
+        <p>Put your logo, artwork or message on apparel your customers, employees and team members can actually wear.</p>
+        <img class="story-img" src="https://www.getbold.com/_next/image?q=75&url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fs1q02bvh%2Fproduction%2F68672ab8a04ed5262fd72634c24aed4aef4bf162-759x570.jpg&w=3840" alt="Custom apparel printing example">
       </div>
 
-
-      <div class="grid steps">
-
-        <div class="step">
-
-          <div class="number">1</div>
-
-          <h3>Send Your Details</h3>
-
-          <p>
-            Tell us what you need and upload your artwork.
-          </p>
-
+      <div class="story-side">
+        <div class="story-card">
+          <h3>BUSINESS APPAREL</h3>
+          <p>Company shirts, uniforms, branded polos and apparel for your team.</p>
+          <a class="arrow" href="#quote">REQUEST A QUOTE →</a>
         </div>
 
-
-        <div class="step">
-
-          <div class="number">2</div>
-
-          <h3>Get Your Quote</h3>
-
-          <p>
-            We review your order and provide pricing.
-          </p>
-
+        <div class="story-card dark">
+          <h3>EVENTS & GROUPS</h3>
+          <p>Birthdays, graduations, reunions, teams, schools and special events.</p>
+          <a class="arrow" href="#quote" style="color:#a9eec5">START YOUR ORDER →</a>
         </div>
-
-
-        <div class="step">
-
-          <div class="number">3</div>
-
-          <h3>Approve</h3>
-
-          <p>
-            Confirm your order details and production plan.
-          </p>
-
-        </div>
-
-
-        <div class="step">
-
-          <div class="number">4</div>
-
-          <h3>Print & Deliver</h3>
-
-          <p>
-            Most orders are completed within 5–7 business days.
-          </p>
-
-        </div>
-
       </div>
+    </div>
+  </div>
+</section>
 
+<section>
+  <div class="container">
+    <div class="head">
+      <div class="kicker">Who We Serve</div>
+      <h2>APPAREL FOR EVERY KIND OF CUSTOMER.</h2>
     </div>
 
-  </section>
+    <div class="who-grid">
+      <div class="who-card"><span>🏢</span><h3>Businesses</h3><p>Branded apparel and uniforms for employees and customers.</p></div>
+      <div class="who-card"><span>🎓</span><h3>Schools</h3><p>Class shirts, clubs, graduation and school events.</p></div>
+      <div class="who-card"><span>🎉</span><h3>Events</h3><p>Matching apparel for celebrations, parties and reunions.</p></div>
+      <div class="who-card"><span>🏆</span><h3>Teams</h3><p>Group apparel for sports, organizations and teams.</p></div>
+    </div>
+  </div>
+</section>
 
-
-  <!-- ABOUT -->
-  <section id="about">
-
-    <div class="container about">
-
-      <div class="about-text">
-
-        <h2>About Fashionixa Klotho</h2>
-
-        <p>
-          Fashionixa Klotho is a custom apparel printing company
-          serving individuals, businesses, schools, events,
-          and organizations across the USA.
-        </p>
-
-        <p>
-          We make it easy to turn your ideas and designs into
-          custom apparel, with flexible options for both small
-          and bulk orders.
-        </p>
-
-
-        <div class="highlight">
-          <span>✓</span>
-          Small and bulk orders
-        </div>
-
-        <div class="highlight">
-          <span>✓</span>
-          Multiple printing methods
-        </div>
-
-        <div class="highlight">
-          <span>✓</span>
-          USA-wide shipping available
-        </div>
-
-        <div class="highlight">
-          <span>✓</span>
-          Free quotes
-        </div>
-
-      </div>
-
-
-      <div class="about-box">
-
-        <h3>Need apparel for your business?</h3>
-
-        <p>
-          Send us your logo, quantity, apparel type,
-          and deadline. We'll review your project
-          and provide a quote.
-        </p>
-
-        <br>
-
-        <a href="#quote" class="btn btn-primary">
-          Request a Quote
-        </a>
-
-      </div>
-
+<section class="why">
+  <div class="container">
+    <div class="head">
+      <div class="kicker">Why Fashionixa Klotho</div>
+      <h2>WE MAKE CUSTOM SIMPLE.</h2>
+      <p>A clean process makes it easier for customers to understand what happens next.</p>
     </div>
 
-  </section>
-
-
-  <!-- QUOTE FORM -->
-  <section id="quote" class="light">
-
-    <div class="container quote-wrap">
-
-
-      <div class="quote-info">
-
-        <h2>Get Your Free Quote</h2>
-
-        <p>
-          Tell us about your order. You can upload your artwork
-          and we'll contact you with the next steps.
-        </p>
-
-
-        <div class="contact-line">
-          <strong>Phone</strong><br>
-          <a href="tel:+12149237638">
-            214-923-7638
-          </a>
-        </div>
-
-
-        <div class="contact-line">
-          <strong>Email</strong><br>
-          <a href="mailto:Info.fashionixaklotho@gmail.com">
-            Info.fashionixaklotho@gmail.com
-          </a>
-        </div>
-
-
-        <div class="contact-line">
-          <strong>WhatsApp</strong><br>
-          <a
-            href="https://wa.me/12149237638"
-            target="_blank"
-          >
-            Chat on WhatsApp
-          </a>
-        </div>
-
-
-        <div class="contact-line">
-          <strong>Service Area</strong><br>
-          Dallas & Customers Across the USA
-        </div>
-
-      </div>
-
-
-      <form
-        class="form"
-        id="quoteForm"
-        onsubmit="sendQuote(event)"
-      >
-
-        <div class="form-grid">
-
-
-          <div class="field">
-
-            <label>Full Name *</label>
-
-            <input
-              id="name"
-              type="text"
-              required
-            >
-
-          </div>
-
-
-          <div class="field">
-
-            <label>Business / Organization</label>
-
-            <input
-              id="business"
-              type="text"
-            >
-
-          </div>
-
-
-          <div class="field">
-
-            <label>Phone *</label>
-
-            <input
-              id="phone"
-              type="tel"
-              required
-            >
-
-          </div>
-
-
-          <div class="field">
-
-            <label>Email *</label>
-
-            <input
-              id="email"
-              type="email"
-              required
-            >
-
-          </div>
-
-
-          <div class="field">
-
-            <label>Product *</label>
-
-            <select id="product" required>
-
-              <option value="">
-                Select
-              </option>
-
-              <option>T-Shirt</option>
-              <option>Hoodie / Sweatshirt</option>
-              <option>Polo</option>
-              <option>Work Uniform</option>
-              <option>School / Graduation</option>
-              <option>Event / Party</option>
-              <option>Business Apparel</option>
-              <option>Other</option>
-
-            </select>
-
-          </div>
-
-
-          <div class="field">
-
-            <label>Quantity *</label>
-
-            <input
-              id="quantity"
-              type="number"
-              min="1"
-              required
-            >
-
-          </div>
-
-
-          <div class="field">
-
-            <label>Printing Method</label>
-
-            <select id="method">
-
-              <option value="">
-                Not sure
-              </option>
-
-              <option>DTF</option>
-              <option>Screen Printing</option>
-              <option>DTG</option>
-              <option>Vinyl</option>
-              <option>
-                Not sure - recommend one
-              </option>
-
-            </select>
-
-          </div>
-
-
-          <div class="field">
-
-            <label>Apparel Color</label>
-
-            <input
-              id="color"
-              type="text"
-              placeholder="Black, white, green..."
-            >
-
-          </div>
-
-
-          <div class="field full">
-
-            <label>Size Breakdown</label>
-
-            <input
-              id="sizes"
-              type="text"
-              placeholder="Example: S-2, M-5, L-8, XL-3"
-            >
-
-          </div>
-
-
-          <div class="field">
-
-            <label>Desired Deadline</label>
-
-            <input
-              id="deadline"
-              type="date"
-            >
-
-          </div>
-
-
-          <div class="field">
-
-            <label>Upload Artwork</label>
-
-            <input
-              id="artwork"
-              type="file"
-              accept=".png,.jpg,.jpeg,.pdf,.ai,.eps,.svg"
-            >
-
-          </div>
-
-
-          <div class="field full">
-
-            <label>Additional Details</label>
-
-            <textarea
-              id="details"
-              placeholder="Tell us about your design, placement, special requirements, etc."
-            ></textarea>
-
-          </div>
-
-        </div>
-
-
-        <button
-          class="btn btn-primary"
-          style="width:100%;margin-top:20px"
-          type="submit"
-        >
-          Send Quote Request
-        </button>
-
-
-        <p class="form-note">
-          Your email app and WhatsApp will open with your
-          quote information. For now, please attach artwork
-          manually to the email.
-        </p>
-
-      </form>
-
+    <div class="why-grid">
+      <div class="why-card"><div class="icon">💎</div><h3>Premium Quality</h3><p>High-quality fabrics and prints selected for your project.</p></div>
+      <div class="why-card"><div class="icon">🎨</div><h3>Full Customization</h3><p>Your design, your colors, your message and your style.</p></div>
+      <div class="why-card"><div class="icon">⚡</div><h3>Fast Communication</h3><p>Send your project details and get the conversation started.</p></div>
+      <div class="why-card"><div class="icon">❤️</div><h3>Made For You</h3><p>Personal orders, business apparel, teams and special events.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="container">
+    <div class="head">
+      <div class="kicker">Simple Process</div>
+      <h2>IDEA → QUOTE → PRINT → WEAR.</h2>
     </div>
 
-  </section>
+    <div class="process-grid">
+      <div class="step"><div class="step-num">1</div><h3>Send Your Idea</h3><p>Tell us what you want printed.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Get Your Quote</h3><p>We review the project and pricing.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Approve</h3><p>Confirm your artwork and order details.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>We Print</h3><p>Your apparel moves into production.</p></div>
+    </div>
+  </div>
+</section>
 
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-
-    <div class="container">
-
-      <div class="section-head">
-
-        <h2>Let's Print Your Next Project</h2>
-
-        <p>
-          Call, email, or message us on WhatsApp for a free quote.
-        </p>
-
+<section class="big-cta">
+  <div class="container">
+    <div class="big-cta-inner">
+      <div class="big-cta-content">
+        <h2>READY TO BRING YOUR IDEA TO LIFE?</h2>
+        <p>Get a quote for custom apparel and tell us what you're looking to create.</p>
+        <a class="btn btn-orange" href="#quote">GET A FREE QUOTE →</a>
       </div>
+    </div>
+  </div>
+</section>
 
+<section class="quote" id="quote">
+  <div class="container quote-grid">
+    <div class="quote-copy">
+      <div class="kicker">Start Your Project</div>
+      <h2>LET'S PUT YOUR DESIGN ON SOMETHING.</h2>
+      <p>Send your project details and we'll get the conversation started.</p>
 
-      <div class="buttons contact-buttons">
-
-        <a href="#quote" class="btn btn-primary">
-          Get a Free Quote
-        </a>
-
-        <a
-          href="tel:+12149237638"
-          class="btn btn-dark"
-        >
-          214-923-7638
-        </a>
-
-        <a
-          href="https://wa.me/12149237638"
-          target="_blank"
-          class="btn btn-outline"
-        >
-          WhatsApp
-        </a>
-
-        <a
-          href="https://www.facebook.com/share/1LW83hyQiu/"
-          target="_blank"
-          class="btn btn-outline"
-        >
-          Facebook
-        </a>
-
-      </div>
-
+      <div class="contact-line"><b>CALL</b><br><a href="tel:+12149237638">214-923-7638</a></div>
+      <div class="contact-line"><b>EMAIL</b><br><a href="mailto:Info.fashionixaklotho@gmail.com">Info.fashionixaklotho@gmail.com</a></div>
+      <div class="contact-line"><b>WHATSAPP</b><br><a href="https://wa.me/12149237638" target="_blank" rel="noopener">Message us on WhatsApp</a></div>
     </div>
 
-  </section>
+    <form class="form" onsubmit="sendQuote(event)">
+      <div class="form-grid">
+        <div class="field"><label>NAME *</label><input id="name" required></div>
+        <div class="field"><label>BUSINESS / GROUP</label><input id="business"></div>
+        <div class="field"><label>PHONE *</label><input id="phone" type="tel" required></div>
+        <div class="field"><label>EMAIL *</label><input id="email" type="email" required></div>
 
+        <div class="field"><label>APPAREL *</label>
+          <select id="product" required>
+            <option value="">Select</option>
+            <option>T-Shirts</option>
+            <option>Hoodies</option>
+            <option>Kids Apparel</option>
+            <option>Polos</option>
+            <option>Workwear</option>
+            <option>School / Team</option>
+            <option>Event Apparel</option>
+            <option>Family Matching</option>
+            <option>Other</option>
+          </select>
+        </div>
 
-  <!-- FOOTER -->
-  <footer>
+        <div class="field"><label>QUANTITY *</label><input id="quantity" type="number" min="1" required></div>
 
-    <div class="container footer-inner">
+        <div class="field"><label>PRINTING</label>
+          <select id="method">
+            <option>Not sure</option>
+            <option>DTF</option>
+            <option>DTG</option>
+            <option>Screen Printing</option>
+            <option>Vinyl</option>
+          </select>
+        </div>
 
-      <div>
-        © <span id="year"></span>
-        Fashionixa Klotho.
-        All rights reserved.
+        <div class="field"><label>DEADLINE</label><input id="deadline" type="date"></div>
+
+        <div class="field full"><label>SIZE / COLOR DETAILS</label>
+          <input id="sizes" placeholder="Example: Black tees — S 5, M 10, L 15">
+        </div>
+
+        <div class="field full"><label>PROJECT DETAILS</label>
+          <textarea id="details" placeholder="Tell us about your design, logo, placement, kids/family order, event, etc."></textarea>
+        </div>
       </div>
 
+      <button class="btn btn-orange" style="width:100%;margin-top:18px;border:0;cursor:pointer" type="submit">
+        SEND QUOTE REQUEST →
+      </button>
+    </form>
+  </div>
+</section>
 
-      <div class="footer-links">
-
-        <a href="#services">Services</a>
-
-        <a href="#quote">Get a Quote</a>
-
-        <a href="mailto:Info.fashionixaklotho@gmail.com">
-          Email
-        </a>
-
-        <a href="tel:+12149237638">
-          Call
-        </a>
-
-      </div>
-
+<footer>
+  <div class="container footer">
+    <strong>© <span id="year"></span> Fashionixa Klotho</strong>
+    <div>
+      <a href="#apparel">Apparel</a>
+      <a href="#methods">Printing</a>
+      <a href="#family">Kids</a>
+      <a href="#quote">Quote</a>
+      <a href="tel:+12149237638">Call</a>
     </div>
+  </div>
+</footer>
 
-  </footer>
+<script>
+function sendQuote(e){
+  e.preventDefault();
 
+  const v=id=>document.getElementById(id).value;
+  const subject="Fashionixa Klotho Quote Request - "+v("name");
 
-  <!-- JAVASCRIPT -->
-  <script>
+  const body=`Hello Fashionixa Klotho,
 
-    function toggleMenu() {
+I would like a custom apparel quote.
 
-      document
-        .getElementById("navLinks")
-        .classList.toggle("open");
+Name: ${v("name")}
+Business/Group: ${v("business")}
+Phone: ${v("phone")}
+Email: ${v("email")}
+Apparel: ${v("product")}
+Quantity: ${v("quantity")}
+Printing: ${v("method")}
+Deadline: ${v("deadline")}
+Size/Color Details: ${v("sizes")}
 
-    }
+Project Details:
+${v("details")}`;
 
+  window.location.href="mailto:Info.fashionixaklotho@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+}
 
-    function closeMenu() {
-
-      document
-        .getElementById("navLinks")
-        .classList.remove("open");
-
-    }
-
-
-    function sendQuote(event) {
-
-      event.preventDefault();
-
-
-      const name =
-        document.getElementById("name").value;
-
-      const business =
-        document.getElementById("business").value;
-
-      const phone =
-        document.getElementById("phone").value;
-
-      const email =
-        document.getElementById("email").value;
-
-      const product =
-        document.getElementById("product").value;
-
-      const quantity =
-        document.getElementById("quantity").value;
-
-      const method =
-        document.getElementById("method").value;
-
-      const color =
-        document.getElementById("color").value;
-
-      const sizes =
-        document.getElementById("sizes").value;
-
-      const deadline =
-        document.getElementById("deadline").value;
-
-      const details =
-        document.getElementById("details").value;
-
-
-      const subject =
-        "New Custom Apparel Quote - " + name;
-
-
-      const message =
-
-`Hello Fashionixa Klotho,
-
-I would like a quote for custom apparel.
-
-Full Name: ${name}
-
-Business / Organization:
-${business}
-
-Phone:
-${phone}
-
-Email:
-${email}
-
-Product:
-${product}
-
-Quantity:
-${quantity}
-
-Printing Method:
-${method}
-
-Apparel Color:
-${color}
-
-Size Breakdown:
-${sizes}
-
-Desired Deadline:
-${deadline}
-
-Additional Details:
-${details}
-
-Thank you.`;
-
-
-      /* OPEN EMAIL */
-
-      const emailLink =
-        "mailto:Info.fashionixaklotho@gmail.com" +
-        "?subject=" +
-        encodeURIComponent(subject) +
-        "&body=" +
-        encodeURIComponent(message);
-
-
-      window.location.href = emailLink;
-
-
-      /* OPEN WHATSAPP */
-
-      setTimeout(function() {
-
-        const whatsappMessage =
-
-`Custom Apparel Quote Request
-
-Name: ${name}
-Business: ${business}
-Phone: ${phone}
-Email: ${email}
-Product: ${product}
-Quantity: ${quantity}
-Printing: ${method}
-Color: ${color}
-Sizes: ${sizes}
-Deadline: ${deadline}
-
-Details:
-${details}`;
-
-
-        window.open(
-          "https://wa.me/12149237638?text=" +
-          encodeURIComponent(whatsappMessage),
-          "_blank"
-        );
-
-      }, 1000);
-
-    }
-
-
-    /* CURRENT YEAR */
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-  </script>
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
 
 </body>
 </html>
