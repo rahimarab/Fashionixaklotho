@@ -1,669 +1,889 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Fashionixa Klotho custom apparel printing in Dallas and Fort Worth. Custom T-shirts, hoodies, kids apparel, DTF, DTG, screen printing and vinyl.">
-<title>Fashionixa Klotho | Custom Apparel Printing</title>
-
-<style>
-:root{
-  --forest:#073f32;
-  --forest2:#0d7055;
-  --green:#19a875;
-  --mint:#e2f7ed;
-  --cream:#fff7e9;
-  --orange:#f47b20;
-  --yellow:#ffc928;
-  --pink:#ff6f91;
-  --blue:#4db7e5;
-  --ink:#10221d;
-  --muted:#66736d;
-  --white:#fff;
-  --line:#e5e5df;
-  --shadow:0 24px 70px rgba(7,63,50,.14);
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:Inter,Arial,Helvetica,sans-serif;
-  color:var(--ink);
-  background:#fff;
-  line-height:1.55;
-}
-a{text-decoration:none;color:inherit}
-img{max-width:100%}
-.container{width:min(1180px,92%);margin:auto}
-
-/* NAV */
-.nav{
-  position:sticky;top:0;z-index:1000;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{height:78px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:12px;font-weight:950;font-size:19px}
-.logo-box{
-  width:45px;height:45px;border-radius:13px;
-  background:var(--forest);color:#b9efcf;
-  display:grid;place-items:center;font-weight:1000;
-  transform:rotate(-4deg);
-}
-.links{display:flex;gap:25px;align-items:center;font-size:14px;font-weight:850}
-.links a:hover{color:var(--orange)}
-.cta{background:var(--forest);color:white!important;padding:12px 20px;border-radius:999px}
-.menu{display:none;background:none;border:0;font-size:28px}
-
-/* HERO */
-.hero{
-  background:
-    radial-gradient(circle at 8% 15%,rgba(244,123,32,.20),transparent 25%),
-    radial-gradient(circle at 90% 20%,rgba(25,168,117,.18),transparent 28%),
-    var(--cream);
-  padding:58px 0 72px;
-  overflow:hidden;
-}
-.hero-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:45px;align-items:center}
-.eyebrow{
-  display:inline-block;background:var(--orange);color:white;
-  padding:8px 13px;border-radius:999px;font-size:11px;font-weight:1000;
-  letter-spacing:1.5px;margin-bottom:18px;
-}
-h1{
-  font-size:clamp(48px,6.2vw,78px);
-  line-height:.94;letter-spacing:-3.5px;margin-bottom:23px;
-}
-h1 em{font-style:normal;color:var(--forest2)}
-.hero p{color:var(--muted);font-size:18px;max-width:560px;margin-bottom:28px}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:14px 21px;border-radius:12px;font-weight:950;
-  border:2px solid transparent;transition:.2s;
-}
-.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.12)}
-.btn-green{background:var(--forest);color:white}
-.btn-orange{background:var(--orange);color:white}
-.btn-white{background:white;border-color:var(--forest);color:var(--forest)}
-
-.hero-photo{
-  position:relative;border-radius:32px;overflow:hidden;
-  min-height:500px;background:#dfe7e2;box-shadow:var(--shadow);
-}
-.hero-photo img{width:100%;height:500px;object-fit:cover;display:block}
-.hero-photo:after{
-  content:"";
-  position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(244,123,32,.12),transparent 45%,rgba(7,63,50,.15));
-  pointer-events:none;
-}
-.photo-overlay{
-  position:absolute;z-index:2;left:18px;right:18px;bottom:18px;
-  background:rgba(7,63,50,.94);color:white;
-  border-radius:18px;padding:17px 19px;
-  display:flex;justify-content:space-between;align-items:center;gap:15px;
-}
-.photo-overlay strong{font-size:18px}
-.photo-overlay span{font-size:12px;color:#c9dfd4}
-
-/* COLOR STRIP */
-.strip{background:var(--forest);color:white;padding:16px 0;overflow:hidden}
-.strip-row{display:flex;justify-content:space-around;gap:25px;font-size:12px;font-weight:950;letter-spacing:1.1px;white-space:nowrap}
-.strip b{color:#b9efcf}
-
-/* SECTIONS */
-section{padding:88px 0}
-.head{text-align:center;max-width:760px;margin:0 auto 42px}
-.kicker{
-  font-size:11px;font-weight:1000;letter-spacing:2px;
-  color:var(--orange);text-transform:uppercase;margin-bottom:8px;
-}
-.head h2{font-size:clamp(34px,4.5vw,53px);line-height:1.03;letter-spacing:-1.8px}
-.head p{color:var(--muted);margin-top:13px}
-
-/* APPAREL */
-.apparel{background:#fff}
-.apparel-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
-.apparel-card{
-  border:1px solid var(--line);border-radius:22px;overflow:hidden;
-  background:white;transition:.25s;box-shadow:0 8px 25px rgba(7,63,50,.04)
-}
-.apparel-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
-.apparel-img{height:250px;background:#f2f3ef;overflow:hidden}
-.apparel-img img{width:100%;height:100%;object-fit:cover;display:block;transition:.4s}
-.apparel-card:hover .apparel-img img{transform:scale(1.05)}
-.apparel-body{padding:18px}
-.apparel-body h3{font-size:19px;margin-bottom:5px}
-.apparel-body p{font-size:13px;color:var(--muted)}
-
-/* FAMILY / KIDS */
-.family{
-  background:
-    radial-gradient(circle at 10% 20%,rgba(255,111,145,.15),transparent 22%),
-    radial-gradient(circle at 90% 75%,rgba(77,183,229,.15),transparent 24%),
-    #fff9f3;
-}
-.family-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
-.family-photo{border-radius:30px;overflow:hidden;min-height:480px;box-shadow:var(--shadow)}
-.family-photo img{width:100%;height:100%;min-height:480px;object-fit:cover;display:block}
-.family-copy{
-  border-radius:30px;padding:45px;background:white;border:1px solid var(--line);
-  display:flex;flex-direction:column;justify-content:center
-}
-.family-copy .badge{
-  display:inline-block;width:max-content;padding:7px 12px;border-radius:999px;
-  background:#ffe0e8;color:#a62b4c;font-weight:950;font-size:11px;
-  letter-spacing:1px;margin-bottom:16px
-}
-.family-copy h2{font-size:48px;line-height:1;letter-spacing:-2px;margin-bottom:15px}
-.family-copy p{color:var(--muted);margin-bottom:20px}
-.family-points{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:10px 0 25px}
-.family-point{padding:12px;border-radius:13px;background:#f7fbf9;font-size:13px;font-weight:800}
-.family-point span{margin-right:6px}
-
-/* METHODS */
-.methods{background:var(--forest);color:white}
-.methods .head p{color:#b8cec4}
-.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.method{
-  padding:27px;border:1px solid rgba(255,255,255,.12);
-  border-radius:20px;background:rgba(255,255,255,.045);
-  transition:.25s
-}
-.method:hover{transform:translateY(-6px);background:rgba(255,255,255,.08)}
-.method .num{color:#a9eec5;font-size:12px;font-weight:1000}
-.method h3{font-size:24px;margin:27px 0 8px}
-.method p{font-size:13px;color:#b8cec4}
-
-/* STORY */
-.story{background:var(--cream)}
-.story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
-.story-main{
-  min-height:430px;border-radius:28px;padding:36px;
-  background:linear-gradient(135deg,#43d393,#b7f3d5);
-  position:relative;overflow:hidden;color:var(--forest)
-}
-.story-main h2{font-size:48px;line-height:.98;max-width:430px;letter-spacing:-2px}
-.story-main p{max-width:420px;margin-top:15px}
-.tiny-label{
-  position:absolute;top:22px;right:22px;background:var(--forest);
-  color:white;padding:8px 12px;border-radius:999px;font-size:10px;font-weight:900
-}
-.story-img{
-  position:absolute;right:-25px;bottom:-30px;width:60%;height:68%;
-  object-fit:cover;border-radius:24px 0 0 0;box-shadow:-15px -15px 35px rgba(0,0,0,.1)
-}
-.story-side{display:grid;gap:20px}
-.story-card{border-radius:28px;padding:31px;background:white;border:1px solid var(--line)}
-.story-card.dark{background:var(--forest);color:white}
-.story-card h3{font-size:29px;line-height:1.05;margin-bottom:10px}
-.story-card p{font-size:14px;color:var(--muted)}
-.story-card.dark p{color:#b8cec4}
-.arrow{color:var(--orange);font-weight:1000;margin-top:20px;display:inline-block}
-
-/* WHO */
-.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
-.who-card{padding:25px;border-radius:20px;background:#f8faf8;border:1px solid var(--line);transition:.2s}
-.who-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(7,63,50,.08)}
-.who-card span{font-size:28px}
-.who-card h3{margin:14px 0 6px}
-.who-card p{font-size:13px;color:var(--muted)}
-
-/* WHY */
-.why{background:white}
-.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.why-card{text-align:center;padding:28px 20px;border-radius:22px;border:1px solid var(--line)}
-.icon{
-  width:60px;height:60px;margin:0 auto 14px;border-radius:50%;
-  display:grid;place-items:center;font-size:25px;background:var(--mint)
-}
-.why-card:nth-child(2) .icon{background:#fff0e4}
-.why-card:nth-child(3) .icon{background:#fff5cc}
-.why-card:nth-child(4) .icon{background:#ffe5ed}
-.why-card h3{font-size:18px;margin-bottom:5px}
-.why-card p{font-size:13px;color:var(--muted)}
-
-/* PROCESS */
-.process{background:#fff}
-.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
-.step{text-align:center}
-.step-num{
-  width:58px;height:58px;margin:0 auto 17px;border-radius:50%;
-  background:var(--mint);color:var(--forest);display:grid;place-items:center;
-  font-weight:1000;font-size:19px;border:2px solid #b9e5ca
-}
-.step:nth-child(2) .step-num{background:#fff0e4;border-color:#ffd1b0}
-.step:nth-child(3) .step-num{background:#fff5cc;border-color:#f6dd83}
-.step:nth-child(4) .step-num{background:#ffe5ed;border-color:#ffb5c9}
-.step h3{margin-bottom:6px}.step p{font-size:13px;color:var(--muted)}
-
-/* CTA BANNER */
-.big-cta{
-  padding:0 0 88px;
-  background:#fff;
-}
-.big-cta-inner{
-  position:relative;overflow:hidden;border-radius:30px;
-  padding:42px 45px;background:linear-gradient(115deg,var(--forest),#08795a);
-  color:white;box-shadow:var(--shadow)
-}
-.big-cta-inner:before,.big-cta-inner:after{
-  content:"";position:absolute;border-radius:50%;pointer-events:none
-}
-.big-cta-inner:before{
-  width:270px;height:270px;background:rgba(244,123,32,.23);right:-70px;top:-100px
-}
-.big-cta-inner:after{
-  width:190px;height:190px;background:rgba(25,168,117,.35);right:170px;bottom:-110px
-}
-.big-cta-content{position:relative;z-index:2;max-width:680px}
-.big-cta h2{font-size:42px;line-height:1.02;letter-spacing:-1.5px;margin-bottom:9px}
-.big-cta p{color:#cbe2d8;margin-bottom:20px}
-
-/* QUOTE */
-.quote{background:var(--cream)}
-.quote-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}
-.quote-copy{padding:20px}
-.quote-copy h2{font-size:51px;line-height:.98;letter-spacing:-2px;margin-bottom:17px}
-.quote-copy p{color:var(--muted);margin-bottom:23px}
-.contact-line{border-top:1px solid #ddd7ca;padding:13px 0;font-size:14px}
-.contact-line b{color:var(--forest)}
-.form{background:white;border-radius:26px;padding:29px;box-shadow:var(--shadow)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.field{display:flex;flex-direction:column;gap:6px}
-.full{grid-column:1/-1}
-label{font-size:12px;font-weight:900}
-input,select,textarea{
-  font:inherit;padding:12px;border:1px solid #d8ded9;border-radius:10px;background:#fbfcfb
-}
-input:focus,select:focus,textarea:focus{outline:2px solid rgba(244,123,32,.25);border-color:var(--orange)}
-textarea{min-height:110px;resize:vertical}
-
-/* FOOTER */
-footer{background:#061d15;color:#9bb0a7;padding:35px 0}
-.footer{display:flex;justify-content:space-between;align-items:center;gap:20px}
-.footer strong{color:white}
-.footer a{font-size:13px;margin-left:18px}
-.footer a:hover{color:white}
-
-/* MOBILE */
-@media(max-width:1050px){
-  .apparel-grid{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:950px){
-  .hero-grid,.story-grid,.quote-grid,.family-grid{grid-template-columns:1fr}
-  .method-grid,.who-grid,.process-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
-  .hero-photo{max-width:750px;margin:auto}
-  .family-photo{min-height:420px}
-  .family-photo img{min-height:420px}
-}
-@media(max-width:700px){
-  .links{
-    display:none;position:absolute;top:78px;left:0;right:0;background:white;
-    padding:20px 4%;flex-direction:column;align-items:flex-start;
-    border-bottom:1px solid var(--line)
-  }
-  .links.open{display:flex}.menu{display:block}
-  .hero{padding:45px 0 55px}
-  h1{font-size:48px}
-  .hero p{font-size:16px}
-  .hero-photo,.hero-photo img{min-height:360px;height:360px}
-  .photo-overlay{flex-direction:column;align-items:flex-start}
-  .apparel-grid,.method-grid,.who-grid,.process-grid,.why-grid{grid-template-columns:1fr}
-  .family-copy{padding:30px}
-  .family-copy h2{font-size:39px}
-  .family-points{grid-template-columns:1fr}
-  .story-main{min-height:520px}
-  .story-img{width:75%;height:55%}
-  .big-cta-inner{padding:32px 25px}
-  .big-cta h2{font-size:34px}
-  .form-grid{grid-template-columns:1fr}
-  .full{grid-column:auto}
-  .footer{flex-direction:column;text-align:center}.footer a{margin:0 8px}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashionixa Klotho | Custom T-Shirt Printing & Embroidery DFW</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandGreen: '#0E3B2E',
+                        brandGreenDark: '#08291F',
+                        brandCream: '#F8F4EC',
+                        brandCreamDark: '#EFE8DA',
+                        brandGold: '#C5A059',
+                        brandGoldDark: '#B68D40',
+                        brandText: '#1A1A1A'
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8F4EC;
+            color: #1A1A1A;
+        }
+        .font-brand {
+            font-family: 'Cinzel', serif;
+        }
+        .badge-gold {
+            background: linear-gradient(135deg, #C5A059, #B68D40);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8F4EC;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0E3B2E;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A059;
+        }
+        /* Print Box Animation */
+        .print-box-dashed {
+            border: 2px dashed #C5A059;
+            background: rgba(197, 160, 89, 0.12);
+            animation: pulseBox 3s infinite alternate;
+        }
+        .print-box-dark {
+            border: 2px dashed #0E3B2E;
+            background: rgba(14, 59, 46, 0.08);
+            animation: pulseBoxDark 3s infinite alternate;
+        }
+        @keyframes pulseBox {
+            0% { border-color: #C5A059; }
+            100% { border-color: #ffffff; }
+        }
+        @keyframes pulseBoxDark {
+            0% { border-color: #0E3B2E; }
+            100% { border-color: #C5A059; }
+        }
+        /* Smooth garment transitions */
+        .garment-svg-path {
+            transition: fill 0.3s ease;
+        }
+    </style>
 </head>
+<body class="antialiased overflow-x-hidden selection:bg-brandGold selection:text-white">
 
-<body>
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-brandCream/95 backdrop-blur-md border-b border-brandCreamDark shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="p-2.5 rounded-xl bg-brandGreen text-brandGold group-hover:bg-brandGold group-hover:text-brandGreen transition-all duration-300 shadow-md">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a1.5 1.5 0 0 1 1.5 1.5c0 .7-.4 1.3-1 1.48V7l8.2 5.5a1 1 0 0 1 .4.8v1.2a1 1 0 0 1-1 .9H3.9a1 1 0 0 1-1-.9v-1.2a1 1 0 0 1 .4-.8L11.5 7V4.98c-.6-.18-1-.78-1-1.48A1.5 1.5 0 0 1 12 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block font-brand font-bold text-xl sm:text-2xl text-brandGreen tracking-wider leading-none">FASHIONIXA</span>
+                        <span class="block font-brand text-xs sm:text-sm text-brandGold font-semibold tracking-widest mt-1">K L O T H O</span>
+                    </div>
+                </a>
 
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="logo" href="#home"><span class="logo-box">FK</span> Fashionixa Klotho</a>
-    <button class="menu" aria-label="Open menu" onclick="document.getElementById('links').classList.toggle('open')">☰</button>
-    <nav class="links" id="links">
-      <a href="#apparel">Apparel</a>
-      <a href="#methods">Printing</a>
-      <a href="#family">Kids & Family</a>
-      <a href="#about">About</a>
-      <a href="#quote">Get a Quote</a>
-      <a class="cta" href="tel:+12149237638">214-923-7638</a>
-    </nav>
-  </div>
-</header>
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 font-semibold text-brandGreen text-sm tracking-wide">
+                    <a href="#customizer" class="hover:text-brandGold transition-colors">T-Shirt Customizer</a>
+                    <a href="#catalog" class="hover:text-brandGold transition-colors">Color Showcase</a>
+                    <a href="#services" class="hover:text-brandGold transition-colors">Printing Services</a>
+                    <a href="#contact" class="hover:text-brandGold transition-colors">Get A Quote</a>
+                </nav>
 
-<section class="hero" id="home">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">CUSTOM APPAREL • DALLAS / FORT WORTH</div>
-      <h1>YOUR IDEA.<br><em>YOUR SHIRT.</em><br>YOUR STYLE.</h1>
-      <p>Custom T-shirts, hoodies, kids apparel, polos and business apparel printed for brands, teams, events, schools and families.</p>
-      <div class="actions">
-        <a class="btn btn-green" href="#quote">START A QUOTE →</a>
-        <a class="btn btn-white" href="#apparel">SEE APPAREL</a>
-      </div>
-    </div>
+                <!-- Header Actions -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="#customizer" class="px-6 py-3 rounded-full bg-brandGold hover:bg-brandGoldDark text-white font-bold text-sm transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fa-solid fa-paintbrush"></i> Test Print Design
+                    </a>
+                </div>
 
-    <div class="hero-photo">
-      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1400&q=85" alt="Smiling woman wearing fashionable clothing">
-      <div class="photo-overlay">
-        <div><strong>TEES + HOODIES + KIDS</strong><br><span>Made for your style</span></div>
-        <span>DTF • DTG • SCREEN • VINYL</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="strip">
-  <div class="container strip-row">
-    <span><b>✓</b> CUSTOM ORDERS</span>
-    <span><b>✓</b> BULK PRINTING</span>
-    <span><b>✓</b> BUSINESS APPAREL</span>
-    <span><b>✓</b> FAMILY & KIDS</span>
-    <span><b>✓</b> EVENT SHIRTS</span>
-  </div>
-</div>
-
-<section id="apparel" class="apparel">
-  <div class="container">
-    <div class="head">
-      <div class="kicker">Pick Your Apparel</div>
-      <h2>MORE THAN JUST T-SHIRTS.</h2>
-      <p>Give customers more reasons to browse. Explore apparel for adults, kids, businesses, teams and special events.</p>
-    </div>
-
-    <div class="apparel-grid">
-      <article class="apparel-card">
-        <div class="apparel-img">
-          <img src="https://beta.tshirtgang.com/images/hero-world.png" alt="Custom T-shirts">
-        </div>
-        <div class="apparel-body"><h3>T-Shirts</h3><p>Everyday custom shirts, brands, events and groups.</p></div>
-      </article>
-
-      <article class="apparel-card">
-        <div class="apparel-img">
-          <img src="https://stackapparelco.com/cdn/shop/collections/49B03112-A7CF-418E-9529-6DD7E040C1AC.jpg?v=1754000448&width=1500" alt="Custom hoodies and sweatshirts">
-        </div>
-        <div class="apparel-body"><h3>Hoodies</h3><p>Custom hoodies and sweatshirts with your artwork.</p></div>
-      </article>
-
-      <article class="apparel-card">
-        <div class="apparel-img">
-          <img src="https://tidalcolors.com/cdn/shop/files/big_tall.webp?v=1779709053&width=1287" alt="Mixed custom apparel">
-        </div>
-        <div class="apparel-body"><h3>Mixed Apparel</h3><p>Build a coordinated look across multiple garment styles.</p></div>
-      </article>
-
-      <article class="apparel-card">
-        <div class="apparel-img">
-          <img src="https://txmaya.com/cdn/shop/articles/from-prototype-to-profit-launch-a-branded-custom-apparel-capsule.webp?v=1758619573" alt="Colorful branded apparel">
-        </div>
-        <div class="apparel-body"><h3>Brand Collections</h3><p>Create a full apparel collection around your brand.</p></div>
-      </article>
-
-      <article class="apparel-card">
-        <div class="apparel-img">
-          <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=900&q=85" alt="Children wearing colorful clothing">
-        </div>
-        <div class="apparel-body"><h3>Kids Apparel</h3><p>Fun custom shirts for birthdays, schools and family events.</p></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="family" id="family">
-  <div class="container">
-    <div class="family-grid">
-      <div class="family-photo">
-        <img src="https://images.unsplash.com/photo-1504159506876-f8338247a14a?auto=format&fit=crop&w=1200&q=85" alt="Children enjoying colorful fashion">
-      </div>
-
-      <div class="family-copy">
-        <span class="badge">FAMILY • KIDS • EVENTS</span>
-        <h2>MAKE IT FUN.<br>MAKE IT YOURS.</h2>
-        <p>Custom apparel isn't only for businesses. Create matching shirts, birthday shirts, school apparel, family shirts and fun designs for kids.</p>
-
-        <div class="family-points">
-          <div class="family-point"><span>🎂</span> Birthday Shirts</div>
-          <div class="family-point"><span>🎓</span> School Events</div>
-          <div class="family-point"><span>👨‍👩‍👧</span> Family Matching</div>
-          <div class="family-point"><span>🎉</span> Parties & Events</div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-brandGreen focus:outline-none p-2 rounded-lg hover:bg-brandCreamDark">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
         </div>
 
-        <a class="btn btn-orange" href="#quote">CREATE YOUR DESIGN →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="methods" id="methods">
-  <div class="container">
-    <div class="head">
-      <div class="kicker" style="color:#a9eec5">Printing Methods</div>
-      <h2>THE RIGHT PRINT FOR YOUR PROJECT.</h2>
-      <p>Four services, one place to get your apparel ready.</p>
-    </div>
-
-    <div class="method-grid">
-      <div class="method"><div class="num">01 / DTF</div><h3>DTF Printing</h3><p>Great for colorful artwork, logos, names and detailed designs.</p></div>
-      <div class="method"><div class="num">02 / DTG</div><h3>DTG Printing</h3><p>Detailed direct-to-garment printing for selected apparel.</p></div>
-      <div class="method"><div class="num">03 / SCREEN</div><h3>Screen Printing</h3><p>A classic option for bold designs and larger production runs.</p></div>
-      <div class="method"><div class="num">04 / VINYL</div><h3>Vinyl Printing</h3><p>Useful for names, numbers, lettering and selected graphics.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="story" id="about">
-  <div class="container">
-    <div class="head">
-      <div class="kicker">Built For Real Projects</div>
-      <h2>FROM ONE SHIRT TO A WHOLE TEAM.</h2>
-      <p>Whether you need one custom shirt or apparel for a whole group, start with your idea.</p>
-    </div>
-
-    <div class="story-grid">
-      <div class="story-main">
-        <div class="tiny-label">FASHIONIXA KLOTHO</div>
-        <h2>MAKE YOUR BRAND<br>LOOK LIKE A BRAND.</h2>
-        <p>Put your logo, artwork or message on apparel your customers, employees and team members can actually wear.</p>
-        <img class="story-img" src="https://www.getbold.com/_next/image?q=75&url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fs1q02bvh%2Fproduction%2F68672ab8a04ed5262fd72634c24aed4aef4bf162-759x570.jpg&w=3840" alt="Custom apparel printing example">
-      </div>
-
-      <div class="story-side">
-        <div class="story-card">
-          <h3>BUSINESS APPAREL</h3>
-          <p>Company shirts, uniforms, branded polos and apparel for your team.</p>
-          <a class="arrow" href="#quote">REQUEST A QUOTE →</a>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brandCream border-b border-brandCreamDark px-4 pt-3 pb-6 space-y-3">
+            <a href="#customizer" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-brandGreen hover:bg-brandCreamDark">T-Shirt Customizer</a>
+            <a href="#catalog" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-brandGreen hover:bg-brandCreamDark">Color Showcase</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-brandGreen hover:bg-brandCreamDark">Printing Services</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg text-base font-semibold text-brandGreen hover:bg-brandCreamDark">Get A Quote</a>
         </div>
+    </header>
 
-        <div class="story-card dark">
-          <h3>EVENTS & GROUPS</h3>
-          <p>Birthdays, graduations, reunions, teams, schools and special events.</p>
-          <a class="arrow" href="#quote" style="color:#a9eec5">START YOUR ORDER →</a>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-brandCream via-brandCreamDark/40 to-brandCream py-12 lg:py-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left: Text & Brand Promises -->
+                <div class="lg:col-span-5 space-y-6 text-brandText">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brandGold/15 border border-brandGold/30 text-brandGoldDark font-bold text-xs sm:text-sm shadow-sm">
+                        <i class="fa-solid fa-location-dot"></i> DALLAS - FORT WORTH, TEXAS
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-brandGreen font-brand">
+                        LOCAL DFW <br/>
+                        <span class="text-brandGold">PRINTING EXPERTS!</span>
+                    </h1>
+                    
+                    <p class="text-xl sm:text-2xl font-bold text-gray-800">
+                        Custom Apparel For All Your Needs.
+                    </p>
+
+                    <!-- Printing Badges -->
+                    <div class="p-5 rounded-2xl bg-white/90 backdrop-blur border border-brandCreamDark shadow-sm space-y-3">
+                        <p class="text-brandGreen font-bold text-xs tracking-widest uppercase">Specialized Techniques:</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-bold text-brandGreen">
+                            <span class="px-3 py-1.5 rounded-lg bg-brandCream border border-brandGold/30 flex items-center gap-1.5"><i class="fa-solid fa-bolt text-brandGold"></i> DTF Printing</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-brandCream border border-brandGold/30 flex items-center gap-1.5"><i class="fa-solid fa-scissors text-brandGold"></i> Embroidery</span>
+                            <span class="px-3 py-1.5 rounded-lg bg-brandCream border border-brandGold/30 flex items-center gap-1.5"><i class="fa-solid fa-fill-drip text-brandGold"></i> Screen Printing</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="pt-2 flex flex-col sm:flex-row gap-4">
+                        <a href="#customizer" class="px-8 py-4 rounded-full bg-brandGold hover:bg-brandGoldDark text-white font-bold text-center text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> GET A FREE QUOTE!
+                        </a>
+                        <a href="#catalog" class="px-8 py-4 rounded-full border-2 border-brandGreen text-brandGreen hover:bg-brandGreen hover:text-white font-bold text-center text-lg transition-all duration-300 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-shirt"></i> View T-Shirt Colors
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-3 pt-1 text-brandGreen font-bold text-sm italic">
+                        <div class="w-2.5 h-2.5 rounded-full bg-brandGold"></div>
+                        <span>"No Order Too Large or Too Small." — Let's bring your ideas to life!</span>
+                    </div>
+                </div>
+
+                <!-- Hero Right: Apparel Rack with "YOUR PRINT WILL BE HERE" Labels -->
+                <div class="lg:col-span-7 relative flex justify-center items-center">
+                    
+                    <!-- Quality Gold Seal Badge -->
+                    <div class="absolute -top-4 -right-2 sm:right-2 z-30 w-28 h-28 sm:w-32 sm:h-32 rounded-full badge-gold text-brandGreenDark font-bold flex flex-col justify-center items-center text-center p-2 shadow-2xl transform rotate-12 hover:rotate-0 transition-transform duration-300 border-2 border-white/50">
+                        <span class="text-[10px] uppercase font-black tracking-widest text-brandGreen">Quality</span>
+                        <span class="text-sm sm:text-base font-black leading-tight text-white drop-shadow-sm">YOU CAN</span>
+                        <span class="text-[10px] uppercase font-black tracking-widest text-brandGreen">WEAR</span>
+                        <i class="fa-solid fa-star text-xs mt-0.5 text-white"></i>
+                    </div>
+
+                    <!-- Main Hero Rack Banner Container -->
+                    <div class="w-full bg-white/90 p-6 sm:p-8 rounded-3xl border-2 border-brandGold/40 shadow-2xl backdrop-blur relative overflow-hidden">
+                        
+                        <!-- Clothes Hanger Metal Rack Bar -->
+                        <div class="w-full h-3 bg-amber-900/30 rounded-full mb-8 relative flex justify-around shadow-inner">
+                            <div class="w-2 h-7 bg-gray-400 absolute -top-4 left-1/4 rounded"></div>
+                            <div class="w-2 h-7 bg-gray-400 absolute -top-4 left-3/4 rounded"></div>
+                        </div>
+
+                        <!-- 2 Apparel Items side-by-side on Hangers -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+                            
+                            <!-- Forest Green T-Shirt Mockup -->
+                            <div class="bg-[#0E3B2E] text-white p-6 rounded-2xl border border-brandGreenDark shadow-xl relative flex flex-col items-center text-center">
+                                <!-- Wooden Hanger Top -->
+                                <div class="w-16 h-5 bg-amber-700/80 rounded-t-full mb-3 border-b-2 border-amber-900"></div>
+                                <span class="text-[10px] font-extrabold text-brandGold uppercase tracking-widest mb-1">Forest Green T-Shirt</span>
+                                
+                                <!-- Printable Area Box: "YOUR PRINT WILL BE HERE" -->
+                                <div class="w-full my-5 p-4 rounded-xl print-box-dashed flex flex-col items-center justify-center min-h-[120px]">
+                                    <i class="fa-solid fa-arrows-to-dot text-brandGold text-xl mb-1"></i>
+                                    <span class="font-brand font-extrabold text-base tracking-wider text-brandGold leading-tight">YOUR PRINT</span>
+                                    <span class="font-brand font-extrabold text-xs tracking-widest text-brandGold">WILL BE HERE</span>
+                                </div>
+
+                                <div class="w-full flex justify-between text-[10px] font-bold text-brandCream/80 border-t border-white/10 pt-2">
+                                    <span>Premium Ring-Spun</span>
+                                    <span>Sizes XS-4XL</span>
+                                </div>
+                            </div>
+
+                            <!-- Off-White / Cream Hoodie Mockup -->
+                            <div class="bg-[#F8F4EC] border-2 border-brandCreamDark text-brandGreen p-6 rounded-2xl shadow-xl relative flex flex-col items-center text-center">
+                                <!-- Wooden Hanger Top -->
+                                <div class="w-16 h-5 bg-amber-700/80 rounded-t-full mb-3 border-b-2 border-amber-900"></div>
+                                <span class="text-[10px] font-extrabold text-brandGold uppercase tracking-widest mb-1">Cream Fleece Hoodie</span>
+                                
+                                <!-- Printable Area Box: "YOUR PRINT WILL BE HERE" -->
+                                <div class="w-full my-5 p-4 rounded-xl print-box-dark flex flex-col items-center justify-center min-h-[120px]">
+                                    <i class="fa-solid fa-arrows-to-dot text-brandGreen text-xl mb-1"></i>
+                                    <span class="font-brand font-extrabold text-base tracking-wider text-brandGreen leading-tight">YOUR PRINT</span>
+                                    <span class="font-brand font-extrabold text-xs tracking-widest text-brandGreen">WILL BE HERE</span>
+                                </div>
+
+                                <div class="w-full flex justify-between text-[10px] font-bold text-brandGreen/80 border-t border-brandCreamDark pt-2">
+                                    <span>Plush Heavy Fleece</span>
+                                    <span>Front Pocket</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Stacked Apparel Strips Below -->
+                        <div class="mt-6 pt-5 border-t border-brandCreamDark grid grid-cols-3 gap-3 items-center text-center">
+                            
+                            <!-- Black Tee Stack -->
+                            <div class="p-3 bg-[#1A1A1A] text-white rounded-xl border border-gray-800">
+                                <span class="text-[10px] font-extrabold text-brandGold block">Jet Black Tee</span>
+                                <span class="text-[9px] text-gray-400 font-bold">ADD PRINT HERE</span>
+                            </div>
+
+                            <!-- Navy Tee Stack -->
+                            <div class="p-3 bg-[#1E293B] text-white rounded-xl border border-slate-700">
+                                <span class="text-[10px] font-extrabold text-brandGold block">Navy Blue Tee</span>
+                                <span class="text-[9px] text-slate-300 font-bold">ADD PRINT HERE</span>
+                            </div>
+
+                            <!-- Pure White Tee Stack -->
+                            <div class="p-3 bg-white text-brandGreen rounded-xl border border-gray-300 shadow-sm">
+                                <span class="text-[10px] font-extrabold text-brandGreen block">Pure White Tee</span>
+                                <span class="text-[9px] text-brandGold font-bold">ADD PRINT HERE</span>
+                            </div>
+
+                        </div>
+
+                        <!-- DFW Location Bar -->
+                        <div class="mt-4 bg-brandGreen rounded-xl p-2.5 text-center text-xs font-bold text-brandGold tracking-wider flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-location-dot"></i> DALLAS – FORT WORTH, TEXAS
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section>
-  <div class="container">
-    <div class="head">
-      <div class="kicker">Who We Serve</div>
-      <h2>APPAREL FOR EVERY KIND OF CUSTOMER.</h2>
-    </div>
+    <!-- Interactive T-Shirt Customizer & Instant Quote Section -->
+    <section id="customizer" class="py-20 bg-brandGreen text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brandGold font-bold uppercase tracking-widest text-xs sm:text-sm">Interactive Apparel Visualizer</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-brand text-brandCream mt-2">Test Your Design On Any Color T-Shirt</h2>
+                <div class="w-20 h-1 bg-brandGold mx-auto mt-4 rounded-full"></div>
+                <p class="text-brandCream/80 mt-4 text-sm sm:text-base">
+                    Select your apparel style and garment color below. See how <span class="text-brandGold font-bold">"ADD PRINT HERE"</span> looks or upload your custom logo!
+                </p>
+            </div>
 
-    <div class="who-grid">
-      <div class="who-card"><span>🏢</span><h3>Businesses</h3><p>Branded apparel and uniforms for employees and customers.</p></div>
-      <div class="who-card"><span>🎓</span><h3>Schools</h3><p>Class shirts, clubs, graduation and school events.</p></div>
-      <div class="who-card"><span>🎉</span><h3>Events</h3><p>Matching apparel for celebrations, parties and reunions.</p></div>
-      <div class="who-card"><span>🏆</span><h3>Teams</h3><p>Group apparel for sports, organizations and teams.</p></div>
-    </div>
-  </div>
-</section>
+            <!-- Customizer App Card -->
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-2xl text-brandText border border-brandGold/30">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Left Options Controls -->
+                    <div class="lg:col-span-6 space-y-6">
+                        
+                        <!-- 1. Select Garment Type -->
+                        <div>
+                            <label class="block text-xs font-bold text-brandGreen uppercase tracking-wider mb-2">1. Select Garment Type</label>
+                            <div class="grid grid-cols-3 gap-3">
+                                <button type="button" onclick="selectGarmentType('tshirt', 8.50, this)" class="garment-type-btn active p-3 rounded-2xl border-2 border-brandGold bg-brandCream text-brandGreen font-bold text-xs flex flex-col items-center gap-1.5 transition-all shadow-sm">
+                                    <i class="fa-solid fa-shirt text-xl text-brandGold"></i>
+                                    <span>T-Shirt</span>
+                                </button>
+                                <button type="button" onclick="selectGarmentType('hoodie', 22.00, this)" class="garment-type-btn p-3 rounded-2xl border-2 border-gray-200 hover:border-brandGold font-bold text-xs flex flex-col items-center gap-1.5 transition-all">
+                                    <i class="fa-solid fa-user-ninja text-xl text-brandGold"></i>
+                                    <span>Hoodie</span>
+                                </button>
+                                <button type="button" onclick="selectGarmentType('sweatshirt', 16.50, this)" class="garment-type-btn p-3 rounded-2xl border-2 border-gray-200 hover:border-brandGold font-bold text-xs flex flex-col items-center gap-1.5 transition-all">
+                                    <i class="fa-solid fa-layer-group text-xl text-brandGold"></i>
+                                    <span>Sweatshirt</span>
+                                </button>
+                            </div>
+                        </div>
 
-<section class="why">
-  <div class="container">
-    <div class="head">
-      <div class="kicker">Why Fashionixa Klotho</div>
-      <h2>WE MAKE CUSTOM SIMPLE.</h2>
-      <p>A clean process makes it easier for customers to understand what happens next.</p>
-    </div>
+                        <!-- 2. Select Garment Color Swatches -->
+                        <div>
+                            <label class="block text-xs font-bold text-brandGreen uppercase tracking-wider mb-2">2. Choose Apparel Color</label>
+                            <div class="flex flex-wrap gap-3" id="color-swatch-container">
+                                <button type="button" onclick="selectColor('#0E3B2E', 'Forest Green', true, this)" class="color-swatch-btn active w-11 h-11 rounded-full border-4 border-brandGold bg-[#0E3B2E] shadow-md transition-transform hover:scale-105" title="Forest Green"></button>
+                                <button type="button" onclick="selectColor('#F8F4EC', 'Cream', false, this)" class="color-swatch-btn w-11 h-11 rounded-full border-2 border-gray-300 bg-[#F8F4EC] shadow-md transition-transform hover:scale-105" title="Cream"></button>
+                                <button type="button" onclick="selectColor('#1A1A1A', 'Jet Black', true, this)" class="color-swatch-btn w-11 h-11 rounded-full border-2 border-gray-300 bg-[#1A1A1A] shadow-md transition-transform hover:scale-105" title="Jet Black"></button>
+                                <button type="button" onclick="selectColor('#1E293B', 'Navy Blue', true, this)" class="color-swatch-btn w-11 h-11 rounded-full border-2 border-gray-300 bg-[#1E293B] shadow-md transition-transform hover:scale-105" title="Navy Blue"></button>
+                                <button type="button" onclick="selectColor('#FFFFFF', 'Pure White', false, this)" class="color-swatch-btn w-11 h-11 rounded-full border-2 border-gray-300 bg-white shadow-md transition-transform hover:scale-105" title="Pure White"></button>
+                            </div>
+                            <span id="selected-color-label" class="text-xs font-bold text-brandGold mt-2 block">Active Color: Forest Green</span>
+                        </div>
 
-    <div class="why-grid">
-      <div class="why-card"><div class="icon">💎</div><h3>Premium Quality</h3><p>High-quality fabrics and prints selected for your project.</p></div>
-      <div class="why-card"><div class="icon">🎨</div><h3>Full Customization</h3><p>Your design, your colors, your message and your style.</p></div>
-      <div class="why-card"><div class="icon">⚡</div><h3>Fast Communication</h3><p>Send your project details and get the conversation started.</p></div>
-      <div class="why-card"><div class="icon">❤️</div><h3>Made For You</h3><p>Personal orders, business apparel, teams and special events.</p></div>
-    </div>
-  </div>
-</section>
+                        <!-- 3. Upload Artwork / Test Design -->
+                        <div>
+                            <label class="block text-xs font-bold text-brandGreen uppercase tracking-wider mb-2">3. Upload Logo Artwork (Optional)</label>
+                            <div class="flex gap-3">
+                                <input type="file" id="logo-file-input" accept="image/*" class="hidden" onchange="handleLogoUpload(event)">
+                                <label for="logo-file-input" class="w-full py-3.5 px-4 rounded-xl border-2 border-dashed border-brandGold bg-brandCream hover:bg-brandCreamDark transition-colors text-center text-xs font-bold text-brandGreen cursor-pointer flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-cloud-arrow-up text-brandGold text-base"></i>
+                                    <span>Upload Your Logo Image</span>
+                                </label>
+                                <button type="button" onclick="resetLogoImage()" class="px-4 py-3.5 rounded-xl bg-gray-200 text-gray-700 text-xs font-bold hover:bg-gray-300 transition-colors">
+                                    Reset
+                                </button>
+                            </div>
+                        </div>
 
-<section class="process">
-  <div class="container">
-    <div class="head">
-      <div class="kicker">Simple Process</div>
-      <h2>IDEA → QUOTE → PRINT → WEAR.</h2>
-    </div>
+                        <!-- 4. Printing Technique & Quantity Calculator -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-gray-100">
+                            <div>
+                                <label class="block text-xs font-bold text-brandGreen uppercase tracking-wider mb-2">Printing Technique</label>
+                                <select id="print-technique-select" onchange="calculateQuote()" class="w-full p-3 rounded-xl border-2 border-gray-200 text-xs font-bold text-gray-800 focus:border-brandGold focus:outline-none">
+                                    <option value="6.00">DTF Printing (Vibrant Full-Color)</option>
+                                    <option value="9.00">Embroidery (High-Density Stitch)</option>
+                                    <option value="4.00">Screen Printing (Bulk Volume)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <label class="text-xs font-bold text-brandGreen uppercase tracking-wider">Quantity</label>
+                                    <span id="qty-display" class="text-xs font-bold text-brandGold">24 Pcs</span>
+                                </div>
+                                <input type="range" id="qty-slider" min="1" max="300" value="24" oninput="updateQuantity(this.value)" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-brandGold">
+                            </div>
+                        </div>
 
-    <div class="process-grid">
-      <div class="step"><div class="step-num">1</div><h3>Send Your Idea</h3><p>Tell us what you want printed.</p></div>
-      <div class="step"><div class="step-num">2</div><h3>Get Your Quote</h3><p>We review the project and pricing.</p></div>
-      <div class="step"><div class="step-num">3</div><h3>Approve</h3><p>Confirm your artwork and order details.</p></div>
-      <div class="step"><div class="step-num">4</div><h3>We Print</h3><p>Your apparel moves into production.</p></div>
-    </div>
-  </div>
-</section>
+                    </div>
 
-<section class="big-cta">
-  <div class="container">
-    <div class="big-cta-inner">
-      <div class="big-cta-content">
-        <h2>READY TO BRING YOUR IDEA TO LIFE?</h2>
-        <p>Get a quote for custom apparel and tell us what you're looking to create.</p>
-        <a class="btn btn-orange" href="#quote">GET A FREE QUOTE →</a>
-      </div>
-    </div>
-  </div>
-</section>
+                    <!-- Right Column: Interactive Vector Mockup Canvas -->
+                    <div class="lg:col-span-6 bg-brandCream rounded-3xl p-6 sm:p-8 border border-brandCreamDark flex flex-col justify-between items-center">
+                        
+                        <div class="w-full text-center mb-3">
+                            <span class="text-xs font-extrabold text-brandGreen uppercase tracking-widest">Realistic Visualizer Canvas</span>
+                            <p class="text-[11px] text-gray-500">Live preview rendered with your selected color & print area</p>
+                        </div>
 
-<section class="quote" id="quote">
-  <div class="container quote-grid">
-    <div class="quote-copy">
-      <div class="kicker">Start Your Project</div>
-      <h2>LET'S PUT YOUR DESIGN ON SOMETHING.</h2>
-      <p>Send your project details and we'll get the conversation started.</p>
+                        <!-- Apparel Mockup Container Box -->
+                        <div class="relative w-full max-w-sm h-80 sm:h-96 rounded-2xl bg-white border-2 border-brandCreamDark shadow-inner flex flex-col items-center justify-center p-4 overflow-hidden">
+                            
+                            <!-- Wooden Hanger Top Graphic -->
+                            <div class="w-20 h-5 bg-amber-800/40 rounded-t-full mb-1 border-b border-amber-900/50"></div>
 
-      <div class="contact-line"><b>CALL</b><br><a href="tel:+12149237638">214-923-7638</a></div>
-      <div class="contact-line"><b>EMAIL</b><br><a href="mailto:Info.fashionixaklotho@gmail.com">Info.fashionixaklotho@gmail.com</a></div>
-      <div class="contact-line"><b>WHATSAPP</b><br><a href="https://wa.me/12149237638" target="_blank" rel="noopener">Message us on WhatsApp</a></div>
-    </div>
+                            <!-- SVG Apparel Vector Container -->
+                            <div id="garment-svg-container" class="relative w-full max-w-[280px] h-[280px] flex items-center justify-center">
+                                
+                                <!-- Dynamic SVG Garment Rendering -->
+                                <svg id="apparel-svg" viewBox="0 0 200 200" class="w-full h-full drop-shadow-md">
+                                    <!-- Garment Main Path -->
+                                    <path id="garment-body-path" class="garment-svg-path" fill="#0E3B2E" stroke="#000000" stroke-opacity="0.15" stroke-width="1.5"
+                                        d="M 60,35 Q 100,48 140,35 L 180,65 L 160,95 L 145,80 L 145,180 Q 100,185 55,180 L 55,80 L 40,95 L 20,65 Z" />
+                                    <!-- Collar Curve -->
+                                    <path id="garment-collar-path" fill="none" stroke="#000000" stroke-opacity="0.2" stroke-width="2" d="M 70,38 Q 100,55 130,38" />
+                                    <!-- Sleeve Lines -->
+                                    <path id="sleeve-left" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="1" d="M 55,80 L 20,65" />
+                                    <path id="sleeve-right" fill="none" stroke="#000000" stroke-opacity="0.15" stroke-width="1" d="M 145,80 L 180,65" />
+                                </svg>
 
-    <form class="form" onsubmit="sendQuote(event)">
-      <div class="form-grid">
-        <div class="field"><label>NAME *</label><input id="name" required></div>
-        <div class="field"><label>BUSINESS / GROUP</label><input id="business"></div>
-        <div class="field"><label>PHONE *</label><input id="phone" type="tel" required></div>
-        <div class="field"><label>EMAIL *</label><input id="email" type="email" required></div>
+                                <!-- Central Print Bounding Box OVERLAY -->
+                                <div id="print-area-box" class="absolute w-36 h-32 rounded-xl print-box-dashed flex flex-col items-center justify-center p-2 text-center overflow-hidden transition-all top-20">
+                                    
+                                    <!-- Custom Image Uploaded Preview -->
+                                    <img id="custom-logo-preview" class="hidden max-w-full max-h-full object-contain" alt="Custom Print Preview">
+                                    
+                                    <!-- Default Printed Label: "ADD PRINT HERE" -->
+                                    <div id="default-print-label" class="flex flex-col items-center justify-center">
+                                        <i id="print-icon" class="fa-solid fa-arrows-to-dot text-brandGold text-2xl mb-1"></i>
+                                        <span id="print-text-main" class="font-brand font-extrabold text-sm tracking-wider text-brandGold leading-tight">ADD PRINT</span>
+                                        <span id="print-text-sub" class="font-brand font-extrabold text-[11px] tracking-widest text-brandGold">HERE</span>
+                                    </div>
 
-        <div class="field"><label>APPAREL *</label>
-          <select id="product" required>
-            <option value="">Select</option>
-            <option>T-Shirts</option>
-            <option>Hoodies</option>
-            <option>Kids Apparel</option>
-            <option>Polos</option>
-            <option>Workwear</option>
-            <option>School / Team</option>
-            <option>Event Apparel</option>
-            <option>Family Matching</option>
-            <option>Other</option>
-          </select>
+                                </div>
+
+                            </div>
+
+                            <!-- Interactive Garment Label -->
+                            <span id="canvas-status-badge" class="mt-2 px-4 py-1.5 rounded-full bg-brandGreen text-brandGold font-bold text-xs shadow-sm">
+                                Forest Green T-Shirt
+                            </span>
+                        </div>
+
+                        <!-- Price Calculation Summary -->
+                        <div class="w-full mt-5 bg-white p-4 rounded-2xl border border-brandCreamDark flex items-center justify-between shadow-sm">
+                            <div>
+                                <span class="text-[10px] uppercase font-bold text-gray-400 block">Est. Unit Price:</span>
+                                <span id="est-unit-price" class="text-xl font-bold font-brand text-brandGreen">$12.76 / ea</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[10px] uppercase font-bold text-gray-400 block">Est. Project Total:</span>
+                                <span id="est-total-price" class="text-2xl font-extrabold font-brand text-brandGold">$306.24</span>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="w-full mt-4 py-3.5 rounded-xl bg-brandGold hover:bg-brandGoldDark text-white font-bold text-center text-sm transition-all shadow-md flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Lock In This Color & Quote
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="field"><label>QUANTITY *</label><input id="quantity" type="number" min="1" required></div>
+    <!-- Blank Apparel Color Showcase Catalog -->
+    <section id="catalog" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandGold font-bold uppercase tracking-widest text-xs sm:text-sm">Blank Apparel Catalog</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-brand text-brandGreen mt-2">Explore T-Shirts & Hoodies in Every Color</h2>
+                <div class="w-20 h-1 bg-brandGold mx-auto mt-4 rounded-full"></div>
+                <p class="text-gray-600 mt-4 text-sm sm:text-base">Click any color swatch below to toggle the garment color and preview the printable area!</p>
+            </div>
 
-        <div class="field"><label>PRINTING</label>
-          <select id="method">
-            <option>Not sure</option>
-            <option>DTF</option>
-            <option>DTG</option>
-            <option>Screen Printing</option>
-            <option>Vinyl</option>
-          </select>
+            <!-- Product Showcase Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Product Card 1: Premium T-Shirt -->
+                <div class="bg-brandCream rounded-3xl p-6 border border-brandCreamDark shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <!-- Garment Card Visual Box -->
+                        <div id="card-1-bg" class="h-64 rounded-2xl bg-[#0E3B2E] transition-colors duration-300 p-6 flex flex-col items-center justify-center text-center shadow-inner relative mb-4">
+                            <div class="w-12 h-4 bg-amber-800/40 rounded-t-full mb-1"></div>
+                            <div id="card-1-box" class="w-36 h-28 rounded-xl print-box-dashed flex flex-col items-center justify-center p-2">
+                                <i id="card-1-icon" class="fa-solid fa-arrows-to-dot text-brandGold text-lg mb-1"></i>
+                                <span id="card-1-text" class="font-brand font-bold text-xs tracking-wider text-brandGold">ADD PRINT HERE</span>
+                            </div>
+                        </div>
+
+                        <h4 class="font-brand font-bold text-xl text-brandGreen mb-1">Premium Heavy Cotton Tee</h4>
+                        <p class="text-xs text-gray-600 mb-4">Ring-spun ultra-soft blank t-shirt. Perfect for DTF & Screen Printing.</p>
+
+                        <!-- Interactive Color Picker Swatches for Card 1 -->
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-[10px] font-bold uppercase text-gray-400">Color Swatches:</span>
+                            <button onclick="updateCardColor(1, '#0E3B2E', true)" class="w-6 h-6 rounded-full bg-[#0E3B2E] border-2 border-white shadow-sm" title="Forest Green"></button>
+                            <button onclick="updateCardColor(1, '#F8F4EC', false)" class="w-6 h-6 rounded-full bg-[#F8F4EC] border-2 border-gray-300 shadow-sm" title="Cream"></button>
+                            <button onclick="updateCardColor(1, '#1A1A1A', true)" class="w-6 h-6 rounded-full bg-[#1A1A1A] border-2 border-white shadow-sm" title="Jet Black"></button>
+                            <button onclick="updateCardColor(1, '#1E293B', true)" class="w-6 h-6 rounded-full bg-[#1E293B] border-2 border-white shadow-sm" title="Navy Blue"></button>
+                            <button onclick="updateCardColor(1, '#FFFFFF', false)" class="w-6 h-6 rounded-full bg-white border-2 border-gray-300 shadow-sm" title="Pure White"></button>
+                        </div>
+                    </div>
+
+                    <a href="#customizer" class="w-full py-3 rounded-xl bg-brandGreen text-white font-bold text-xs text-center hover:bg-brandGold transition-colors">
+                        Customize This Tee
+                    </a>
+                </div>
+
+                <!-- Product Card 2: Fleece Hoodie -->
+                <div class="bg-brandCream rounded-3xl p-6 border border-brandCreamDark shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <!-- Garment Card Visual Box -->
+                        <div id="card-2-bg" class="h-64 rounded-2xl bg-[#F8F4EC] transition-colors duration-300 border-2 border-brandCreamDark p-6 flex flex-col items-center justify-center text-center shadow-inner relative mb-4">
+                            <div class="w-12 h-4 bg-amber-800/40 rounded-t-full mb-1"></div>
+                            <div id="card-2-box" class="w-36 h-28 rounded-xl print-box-dark flex flex-col items-center justify-center p-2">
+                                <i id="card-2-icon" class="fa-solid fa-arrows-to-dot text-brandGreen text-lg mb-1"></i>
+                                <span id="card-2-text" class="font-brand font-bold text-xs tracking-wider text-brandGreen">YOUR PRINT HERE</span>
+                            </div>
+                        </div>
+
+                        <h4 class="font-brand font-bold text-xl text-brandGreen mb-1">Heavyweight Fleece Hoodie</h4>
+                        <p class="text-xs text-gray-600 mb-4">Plush fleece interior with front kangaroo pocket for printing & embroidery.</p>
+
+                        <!-- Interactive Color Picker Swatches for Card 2 -->
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-[10px] font-bold uppercase text-gray-400">Color Swatches:</span>
+                            <button onclick="updateCardColor(2, '#F8F4EC', false)" class="w-6 h-6 rounded-full bg-[#F8F4EC] border-2 border-gray-300 shadow-sm" title="Cream"></button>
+                            <button onclick="updateCardColor(2, '#0E3B2E', true)" class="w-6 h-6 rounded-full bg-[#0E3B2E] border-2 border-white shadow-sm" title="Forest Green"></button>
+                            <button onclick="updateCardColor(2, '#1A1A1A', true)" class="w-6 h-6 rounded-full bg-[#1A1A1A] border-2 border-white shadow-sm" title="Jet Black"></button>
+                            <button onclick="updateCardColor(2, '#1E293B', true)" class="w-6 h-6 rounded-full bg-[#1E293B] border-2 border-white shadow-sm" title="Navy Blue"></button>
+                            <button onclick="updateCardColor(2, '#FFFFFF', false)" class="w-6 h-6 rounded-full bg-white border-2 border-gray-300 shadow-sm" title="Pure White"></button>
+                        </div>
+                    </div>
+
+                    <a href="#customizer" class="w-full py-3 rounded-xl bg-brandGreen text-white font-bold text-xs text-center hover:bg-brandGold transition-colors">
+                        Customize This Hoodie
+                    </a>
+                </div>
+
+                <!-- Product Card 3: Crewneck Sweatshirt -->
+                <div class="bg-brandCream rounded-3xl p-6 border border-brandCreamDark shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <!-- Garment Card Visual Box -->
+                        <div id="card-3-bg" class="h-64 rounded-2xl bg-[#1A1A1A] transition-colors duration-300 p-6 flex flex-col items-center justify-center text-center shadow-inner relative mb-4">
+                            <div class="w-12 h-4 bg-amber-800/40 rounded-t-full mb-1"></div>
+                            <div id="card-3-box" class="w-36 h-28 rounded-xl print-box-dashed flex flex-col items-center justify-center p-2">
+                                <i id="card-3-icon" class="fa-solid fa-arrows-to-dot text-brandGold text-lg mb-1"></i>
+                                <span id="card-3-text" class="font-brand font-bold text-xs tracking-wider text-brandGold">ADD PRINT HERE</span>
+                            </div>
+                        </div>
+
+                        <h4 class="font-brand font-bold text-xl text-brandGreen mb-1">Cozy Crewneck Sweatshirt</h4>
+                        <p class="text-xs text-gray-600 mb-4">Classic fit pullover sweatshirt with ribbed collar and cuffs.</p>
+
+                        <!-- Interactive Color Picker Swatches for Card 3 -->
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-[10px] font-bold uppercase text-gray-400">Color Swatches:</span>
+                            <button onclick="updateCardColor(3, '#1A1A1A', true)" class="w-6 h-6 rounded-full bg-[#1A1A1A] border-2 border-white shadow-sm" title="Jet Black"></button>
+                            <button onclick="updateCardColor(3, '#0E3B2E', true)" class="w-6 h-6 rounded-full bg-[#0E3B2E] border-2 border-white shadow-sm" title="Forest Green"></button>
+                            <button onclick="updateCardColor(3, '#F8F4EC', false)" class="w-6 h-6 rounded-full bg-[#F8F4EC] border-2 border-gray-300 shadow-sm" title="Cream"></button>
+                            <button onclick="updateCardColor(3, '#1E293B', true)" class="w-6 h-6 rounded-full bg-[#1E293B] border-2 border-white shadow-sm" title="Navy Blue"></button>
+                            <button onclick="updateCardColor(3, '#FFFFFF', false)" class="w-6 h-6 rounded-full bg-white border-2 border-gray-300 shadow-sm" title="Pure White"></button>
+                        </div>
+                    </div>
+
+                    <a href="#customizer" class="w-full py-3 rounded-xl bg-brandGreen text-white font-bold text-xs text-center hover:bg-brandGold transition-colors">
+                        Customize Sweatshirt
+                    </a>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <div class="field"><label>DEADLINE</label><input id="deadline" type="date"></div>
+    <!-- Printing Services Section -->
+    <section id="services" class="py-20 bg-brandCream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandGold font-bold uppercase tracking-widest text-xs sm:text-sm">In-House Quality</span>
+                <h2 class="text-3xl sm:text-4xl font-bold font-brand text-brandGreen mt-2">Services Built For Custom Apparel</h2>
+                <div class="w-20 h-1 bg-brandGold mx-auto mt-4 rounded-full"></div>
+            </div>
 
-        <div class="field full"><label>SIZE / COLOR DETAILS</label>
-          <input id="sizes" placeholder="Example: Black tees — S 5, M 10, L 15">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Service 1: DTF Printing -->
+                <div class="bg-white rounded-3xl p-8 border border-brandCreamDark shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brandGreen text-brandGold flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-brand text-brandGreen mb-3">DTF Printing</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            Direct To Film transfers provide vibrant full-color graphics, razor-sharp artwork details, and incredible wash durability on dark or light garments.
+                        </p>
+                    </div>
+                    <ul class="text-xs font-semibold text-gray-700 space-y-2 pt-4 border-t border-gray-100">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brandGold mr-2"></i> Full Color & Gradients</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brandGold mr-2"></i> No Order Minimums</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Embroidery -->
+                <div class="bg-white rounded-3xl p-8 border border-brandCreamDark shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brandGreen text-brandGold flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-brand text-brandGreen mb-3">Custom Embroidery</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            Elevate your brand image with high-density stitched logos. Elegant, durable, and professional for polos, jackets, hats, and workwear.
+                        </p>
+                    </div>
+                    <ul class="text-xs font-semibold text-gray-700 space-y-2 pt-4 border-t border-gray-100">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brandGold mr-2"></i> 3D Puff Stitching Available</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brandGold mr-2"></i> Professional & Durable</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Screen Printing -->
+                <div class="bg-white rounded-3xl p-8 border border-brandCreamDark shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brandGreen text-brandGold flex items-center justify-center text-2xl mb-6 shadow-md">
+                            <i class="fa-solid fa-fill-drip"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-brand text-brandGreen mb-3">Screen Printing</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            The industry standard for large volume orders, sports teams, school spirit wear, and merchandise lines. Unbeatable volume discounts.
+                        </p>
+                    </div>
+                    <ul class="text-xs font-semibold text-gray-700 space-y-2 pt-4 border-t border-gray-100">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brandGold mr-2"></i> Maximum Savings on Bulk Runs</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-brandGold mr-2"></i> Long-Lasting Premium Inks</li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <div class="field full"><label>PROJECT DETAILS</label>
-          <textarea id="details" placeholder="Tell us about your design, logo, placement, kids/family order, event, etc."></textarea>
+    <!-- Quote Request Section -->
+    <section id="contact" class="py-20 bg-brandCream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left Info -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-brandGold font-bold uppercase tracking-widest text-xs sm:text-sm">Get A Quick Quote</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold font-brand text-brandGreen mt-2">Request Your Free DFW Print Estimate</h2>
+                        <p class="text-gray-600 mt-4 leading-relaxed text-sm sm:text-base">
+                            Submit your project details or artwork description for a quick quote and digital print preview from our Dallas-Fort Worth team.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brandGreen text-brandGold flex items-center justify-center shrink-0 text-xl shadow-md">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-brand font-bold text-brandGreen">Local DFW Service</h4>
+                                <p class="text-gray-600 text-sm">Dallas – Fort Worth Metroplex, Texas</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brandGreen text-brandGold flex items-center justify-center shrink-0 text-xl shadow-md">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-brand font-bold text-brandGreen">Direct Email</h4>
+                                <p class="text-gray-600 text-sm">info@fashionixaklotho.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-brandGreen text-white border border-brandGold/30 shadow-md">
+                        <h4 class="font-brand font-bold text-brandGold text-lg mb-1">Company Promise</h4>
+                        <p class="text-xs text-brandCream/80 italic">"No Order Too Large or Too Small."</p>
+                    </div>
+                </div>
+
+                <!-- Right Contact Form -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 shadow-lg border border-brandCreamDark">
+                    <h3 class="font-brand font-bold text-2xl text-brandGreen mb-6">Submit Your Project Details</h3>
+                    
+                    <form onsubmit="handleQuoteSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-700 mb-2">Your Name *</label>
+                                <input type="text" required placeholder="John Doe" class="w-full p-3.5 rounded-xl border border-gray-300 focus:border-brandGold focus:outline-none bg-brandCream/30 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-700 mb-2">Phone Number *</label>
+                                <input type="tel" required placeholder="(214) 000-0000" class="w-full p-3.5 rounded-xl border border-gray-300 focus:border-brandGold focus:outline-none bg-brandCream/30 text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" required placeholder="john@example.com" class="w-full p-3.5 rounded-xl border border-gray-300 focus:border-brandGold focus:outline-none bg-brandCream/30 text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-700 mb-2">Garment Color & Print Details</label>
+                            <textarea rows="4" placeholder="Tell us your garment choice (e.g. Forest Green T-Shirts, Cream Hoodies), quantities, and design placement..." class="w-full p-3.5 rounded-xl border border-gray-300 focus:border-brandGold focus:outline-none bg-brandCream/30 text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-brandGold hover:bg-brandGoldDark text-white font-bold text-center text-lg shadow-md transition-all">
+                            Submit Quote Request <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
         </div>
-      </div>
+    </section>
 
-      <button class="btn btn-orange" style="width:100%;margin-top:18px;border:0;cursor:pointer" type="submit">
-        SEND QUOTE REQUEST →
-      </button>
-    </form>
-  </div>
-</section>
+    <!-- Footer -->
+    <footer class="bg-brandGreenDark text-white border-t border-brandGold/20 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center items-center gap-3 mb-4">
+                <span class="font-brand font-bold text-xl text-brandCream tracking-wider">FASHIONIXA KLOTHO</span>
+            </div>
+            <p class="text-xs text-brandCream/70 mb-4">Dallas – Fort Worth, Texas Custom T-Shirt Printing & Embroidery</p>
+            <p class="text-[11px] text-brandCream/50">&copy; <span id="year"></span> Fashionixa Klotho. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-<footer>
-  <div class="container footer">
-    <strong>© <span id="year"></span> Fashionixa Klotho</strong>
-    <div>
-      <a href="#apparel">Apparel</a>
-      <a href="#methods">Printing</a>
-      <a href="#family">Kids</a>
-      <a href="#quote">Quote</a>
-      <a href="tel:+12149237638">Call</a>
-    </div>
-  </div>
-</footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-<script>
-function sendQuote(e){
-  e.preventDefault();
+        // Customizer Application State
+        let currentGarmentType = 'tshirt';
+        let currentBasePrice = 8.50;
+        let currentColorHex = '#0E3B2E';
+        let currentColorName = 'Forest Green';
+        let isDarkGarment = true;
+        let currentQuantity = 24;
 
-  const v=id=>document.getElementById(id).value;
-  const subject="Fashionixa Klotho Quote Request - "+v("name");
+        // Vector Path Paths for Apparel Types
+        const svgGarmentPaths = {
+            tshirt: "M 60,35 Q 100,48 140,35 L 180,65 L 160,95 L 145,80 L 145,180 Q 100,185 55,180 L 55,80 L 40,95 L 20,65 Z",
+            hoodie: "M 60,35 Q 100,50 140,35 L 185,70 L 160,110 L 145,90 L 145,185 Q 100,190 55,185 L 55,90 L 40,110 L 15,70 Z",
+            sweatshirt: "M 60,35 Q 100,45 140,35 L 182,68 L 160,102 L 145,85 L 145,182 Q 100,186 55,182 L 55,85 L 40,102 L 18,68 Z"
+        };
 
-  const body=`Hello Fashionixa Klotho,
+        // DOM Element Cache
+        const garmentBodyPath = document.getElementById('garment-body-path');
+        const printAreaBox = document.getElementById('print-area-box');
+        const printIcon = document.getElementById('print-icon');
+        const printTextMain = document.getElementById('print-text-main');
+        const printTextSub = document.getElementById('print-text-sub');
+        const canvasStatusBadge = document.getElementById('canvas-status-badge');
+        const selectedColorLabel = document.getElementById('selected-color-label');
+        const customLogoPreview = document.getElementById('custom-logo-preview');
+        const defaultPrintLabel = document.getElementById('default-print-label');
+        const logoFileInput = document.getElementById('logo-file-input');
 
-I would like a custom apparel quote.
+        // Toggle Mobile Navigation
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
 
-Name: ${v("name")}
-Business/Group: ${v("business")}
-Phone: ${v("phone")}
-Email: ${v("email")}
-Apparel: ${v("product")}
-Quantity: ${v("quantity")}
-Printing: ${v("method")}
-Deadline: ${v("deadline")}
-Size/Color Details: ${v("sizes")}
+        // Select Garment Type
+        function selectGarmentType(type, price, btn) {
+            currentGarmentType = type;
+            currentBasePrice = price;
 
-Project Details:
-${v("details")}`;
+            // Update Active Class on Buttons
+            document.querySelectorAll('.garment-type-btn').forEach(b => {
+                b.classList.remove('active', 'border-brandGold', 'bg-brandCream');
+                b.classList.add('border-gray-200');
+            });
+            btn.classList.add('active', 'border-brandGold', 'bg-brandCream');
+            btn.classList.remove('border-gray-200');
 
-  window.location.href="mailto:Info.fashionixaklotho@gmail.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
-}
+            // Morph SVG Path
+            if(svgGarmentPaths[type]) {
+                garmentBodyPath.setAttribute('d', svgGarmentPaths[type]);
+            }
 
-document.getElementById("year").textContent=new Date().getFullYear();
-</script>
+            updateCustomizerUI();
+        }
 
+        // Select Garment Color
+        function selectColor(hex, name, isDark, btn) {
+            currentColorHex = hex;
+            currentColorName = name;
+            isDarkGarment = isDark;
+
+            // Highlight Active Swatch
+            document.querySelectorAll('.color-swatch-btn').forEach(b => {
+                b.classList.remove('active', 'border-4', 'border-brandGold');
+                b.classList.add('border-2');
+            });
+            btn.classList.add('active', 'border-4', 'border-brandGold');
+
+            selectedColorLabel.textContent = `Active Color: ${name}`;
+
+            updateCustomizerUI();
+        }
+
+        // Handle Image Logo Upload
+        function handleLogoUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    customLogoPreview.src = e.target.result;
+                    customLogoPreview.classList.remove('hidden');
+                    defaultPrintLabel.classList.add('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Reset Logo Back to Default "ADD PRINT HERE"
+        function resetLogoImage() {
+            logoFileInput.value = '';
+            customLogoPreview.src = '';
+            customLogoPreview.classList.add('hidden');
+            defaultPrintLabel.classList.remove('hidden');
+        }
+
+        // Quantity Slider Handler
+        function updateQuantity(val) {
+            currentQuantity = parseInt(val);
+            document.getElementById('qty-display').textContent = `${currentQuantity} Pcs`;
+            calculateQuote();
+        }
+
+        // Calculate Price Estimate
+        function calculateQuote() {
+            const printMethodPrice = parseFloat(document.getElementById('print-technique-select').value);
+            
+            let bulkDiscount = 1.0;
+            if (currentQuantity >= 150) bulkDiscount = 0.65;
+            else if (currentQuantity >= 50) bulkDiscount = 0.78;
+            else if (currentQuantity >= 24) bulkDiscount = 0.88;
+
+            const unitPrice = (currentBasePrice + printMethodPrice) * bulkDiscount;
+            const totalPrice = unitPrice * currentQuantity;
+
+            document.getElementById('est-unit-price').textContent = `$${unitPrice.toFixed(2)} / ea`;
+            document.getElementById('est-total-price').textContent = `$${totalPrice.toFixed(2)}`;
+        }
+
+        // Synchronize Customizer Visual UI Colors
+        function updateCustomizerUI() {
+            // Apply fill color to garment SVG
+            garmentBodyPath.setAttribute('fill', currentColorHex);
+
+            // Toggle printable box styling based on dark vs light garment
+            if (isDarkGarment) {
+                printAreaBox.className = "absolute w-36 h-32 rounded-xl print-box-dashed flex flex-col items-center justify-center p-2 text-center overflow-hidden transition-all top-20";
+                printIcon.className = "fa-solid fa-arrows-to-dot text-brandGold text-2xl mb-1";
+                printTextMain.className = "font-brand font-extrabold text-sm tracking-wider text-brandGold leading-tight";
+                printTextSub.className = "font-brand font-extrabold text-[11px] tracking-widest text-brandGold";
+            } else {
+                printAreaBox.className = "absolute w-36 h-32 rounded-xl print-box-dark flex flex-col items-center justify-center p-2 text-center overflow-hidden transition-all top-20";
+                printIcon.className = "fa-solid fa-arrows-to-dot text-brandGreen text-2xl mb-1";
+                printTextMain.className = "font-brand font-extrabold text-sm tracking-wider text-brandGreen leading-tight";
+                printTextSub.className = "font-brand font-extrabold text-[11px] tracking-widest text-brandGreen";
+            }
+
+            // Update status badge below canvas
+            const formattedType = currentGarmentType.charAt(0).toUpperCase() + currentGarmentType.slice(1);
+            canvasStatusBadge.textContent = `${currentColorName} ${formattedType}`;
+
+            calculateQuote();
+        }
+
+        // Update Card Gallery Background & Text Colors dynamically
+        function updateCardColor(cardNum, hex, isDark) {
+            const bgEl = document.getElementById(`card-${cardNum}-bg`);
+            const boxEl = document.getElementById(`card-${cardNum}-box`);
+            const iconEl = document.getElementById(`card-${cardNum}-icon`);
+            const textEl = document.getElementById(`card-${cardNum}-text`);
+
+            bgEl.style.backgroundColor = hex;
+
+            if (isDark) {
+                boxEl.className = "w-36 h-28 rounded-xl print-box-dashed flex flex-col items-center justify-center p-2";
+                iconEl.className = "fa-solid fa-arrows-to-dot text-brandGold text-lg mb-1";
+                textEl.className = "font-brand font-bold text-xs tracking-wider text-brandGold";
+            } else {
+                boxEl.className = "w-36 h-28 rounded-xl print-box-dark flex flex-col items-center justify-center p-2";
+                iconEl.className = "fa-solid fa-arrows-to-dot text-brandGreen text-lg mb-1";
+                textEl.className = "font-brand font-bold text-xs tracking-wider text-brandGreen";
+            }
+        }
+
+        // Form Submit Handler
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            alert('Thank you! Your quote request has been submitted successfully. Our DFW team will contact you shortly.');
+            e.target.reset();
+        }
+
+        // Initialize Customizer Default View
+        updateCustomizerUI();
+    </script>
 </body>
 </html>
